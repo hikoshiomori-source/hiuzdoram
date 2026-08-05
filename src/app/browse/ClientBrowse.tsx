@@ -4,7 +4,7 @@ import { useState } from "react";
 import DoramaCard from "@/components/DoramaCard";
 import { Drama } from "@/lib/types";
 
-const genres = ["Hammasi", "Romance", "Action", "Fantasy", "Medical", "Thriller", "Sci-Fi", "Historical", "Slice of Life"];
+const genres = ["Hammasi", "Romantika", "Jangari", "Fantastika", "Tibbiyot", "Triller", "Ilmiy-fantastika", "Tarixiy", "Hayotiy", "Komediya", "Sirlar", "Melodrama"];
 const countries = ["Hammasi", "South Korea", "Japan", "China", "Thailand"];
 const statuses = ["Hammasi", "Ongoing", "Completed"];
 

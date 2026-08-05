@@ -11,8 +11,8 @@ interface EpisodeForm {
 }
 
 const AVAILABLE_GENRES = [
-  "Romance", "Action", "Fantasy", "Medical", "Thriller", 
-  "Sci-Fi", "Historical", "Slice of Life", "Comedy", "Melodrama"
+  "Romantika", "Jangari", "Fantastika", "Tibbiyot", "Triller", 
+  "Ilmiy-fantastika", "Tarixiy", "Hayotiy", "Komediya", "Sirlar", "Melodrama"
 ];
 
 const DAYS_OF_WEEK = [
