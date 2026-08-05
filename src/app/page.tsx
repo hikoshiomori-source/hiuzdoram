@@ -29,7 +29,8 @@ export default async function HomePage() {
           {error && (
             <div className="bg-error/10 text-error p-4 rounded-xl max-w-lg overflow-auto text-sm text-left">
               <strong>Xatolik tafsilotlari:</strong><br/>
-              {error.message || JSON.stringify(error)}
+              {error.message || JSON.stringify(error)}<br/>
+              <strong>URL:</strong> "{process.env.NEXT_PUBLIC_SUPABASE_URL}"
             </div>
           )}
           {(!dbDramas || dbDramas.length === 0) && !error && (
