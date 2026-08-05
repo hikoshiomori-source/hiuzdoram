@@ -6,8 +6,7 @@ const ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZ
 const supabase = createClient(URL, ANON);
 
 async function check() {
-  const { data, error } = await supabase.from('dramas').select('id, title');
-  console.log('Error:', error);
-  console.log('Dramas:', data);
+  const { data, error } = await supabase.from('dramas').select('*').limit(1);
+  console.log('Columns:', data && data[0] ? Object.keys(data[0]) : []);
 }
 check();

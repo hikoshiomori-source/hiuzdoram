@@ -2,7 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { dramas } from "@/lib/data";
+import { createClient } from "@/lib/supabase/server";
+
+export const dynamic = 'force-dynamic';
 
 const weekDays = [
   { day: "Dushanba", short: "Du" },
@@ -14,14 +16,36 @@ const weekDays = [
   { day: "Yakshanba", short: "Ya" },
 ];
 
-// Mock schedule: assign dramas to days
-const schedule = weekDays.map((wd, i) => ({
-  ...wd,
-  isToday: i === 1, // Tuesday
-  dramas: dramas.filter((_, di) => di % 7 === i || di % 3 === i).slice(0, 3),
-}));
+export default async function SchedulePage() {
+  const supabase = await createClient();
+  
+  // Vercel server is UTC, so we get approx day (0 = Sun, 1 = Mon)
+  const todayIndex = new Date().getDay();
+  // Map to our array index: 0 = Mon, 6 = Sun
+  const todayMapped = todayIndex === 0 ? 6 : todayIndex - 1;
 
-export default function SchedulePage() {
+  const { data: dbDramas } = await supabase
+    .from("dramas")
+    .select(`
+      id, title, poster_url, release_days, release_time,
+      episodes (id)
+    `)
+    .eq('status', 'Ongoing');
+
+  const dramas = dbDramas || [];
+
+  const schedule = weekDays.map((wd, i) => {
+    const dayDramas = dramas.filter(d => 
+      Array.isArray(d.release_days) && d.release_days.includes(wd.day)
+    );
+
+    return {
+      ...wd,
+      isToday: i === todayMapped,
+      dramas: dayDramas,
+    };
+  });
+
   return (
     <>
       <Navbar />
@@ -77,7 +101,7 @@ export default function SchedulePage() {
                       >
                         <div className="w-12 h-16 rounded-lg overflow-hidden flex-shrink-0 relative">
                           <Image
-                            src={drama.poster}
+                            src={drama.poster_url || "/placeholder.jpg"}
                             alt={drama.title}
                             fill
                             className="object-cover"
@@ -89,7 +113,7 @@ export default function SchedulePage() {
                             {drama.title}
                           </h3>
                           <p className="text-xs text-text-secondary mt-0.5">
-                            {drama.episodes.length + 1}-qism • 21:00
+                            {drama.episodes?.length ? drama.episodes.length + 1 : 1}-qism • {drama.release_time || '21:00'}
                           </p>
                         </div>
                         <span className="material-symbols-outlined text-on-surface-variant group-hover:text-primary text-xl transition-colors">

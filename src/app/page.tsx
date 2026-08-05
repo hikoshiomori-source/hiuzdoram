@@ -139,30 +139,15 @@ export default async function HomePage() {
         <div className="w-full max-w-[1600px] mx-auto px-4 md:px-6 py-12 grid grid-cols-1 xl:grid-cols-12 gap-12 relative z-20">
           {/* Left: Dramas Grid */}
           <div className="xl:col-span-9 flex flex-col gap-12">
-            {/* Filter Bar */}
-            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 bg-surface-container-low/50 p-4 rounded-2xl backdrop-blur-md border border-border-glass">
-              <div className="flex items-center gap-2 overflow-x-auto w-full pb-2 md:pb-0 scrollbar-hide">
-                {["Hammasi", "Koreya", "Yaponiya", "Xitoy"].map((region, i) => (
-                  <button
-                    key={region}
-                    className={`px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap transition-colors ${
-                      i === 0
-                        ? "bg-primary text-on-primary shadow-[0_0_15px_rgba(210,187,255,0.3)]"
-                        : "bg-surface-container-high hover:bg-surface-variant text-on-surface-variant hover:text-on-surface"
-                    }`}
-                  >
-                    {region}
-                  </button>
-                ))}
-                <div className="w-px h-6 bg-border-glass mx-2" />
-                <button className="px-4 py-2 rounded-full bg-surface-container-high hover:bg-surface-variant text-on-surface-variant flex items-center gap-1 text-sm font-semibold whitespace-nowrap transition-colors">
-                  Janr <span className="material-symbols-outlined text-lg">keyboard_arrow_down</span>
-                </button>
-              </div>
-              <button className="flex items-center gap-2 text-on-surface-variant hover:text-primary text-sm font-semibold transition-colors flex-shrink-0">
-                <span className="material-symbols-outlined text-xl">sort</span>
-                Trending
-              </button>
+            <div className="flex flex-col md:flex-row items-center justify-between gap-4 bg-surface-container-low/50 p-4 rounded-2xl backdrop-blur-md border border-border-glass">
+              <h2 className="text-xl font-bold text-on-surface">Barcha Doramalar</h2>
+              <Link 
+                href="/browse"
+                className="flex items-center gap-2 bg-primary/20 hover:bg-primary/30 text-primary px-6 py-2 rounded-full text-sm font-semibold transition-colors"
+              >
+                <span className="material-symbols-outlined text-xl">filter_list</span>
+                Filtrlash
+              </Link>
             </div>
 
             {/* Grid */}
