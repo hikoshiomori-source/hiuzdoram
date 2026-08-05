@@ -6,6 +6,8 @@ import DoramaCard from "@/components/DoramaCard";
 import { IMAGES } from "@/lib/data";
 import { createClient } from "@/lib/supabase/server";
 
+export const dynamic = 'force-dynamic';
+
 export default async function HomePage() {
   const supabase = await createClient();
 
@@ -22,8 +24,19 @@ export default async function HomePage() {
     return (
       <>
         <Navbar />
-        <main className="w-full pt-20 bg-background min-h-screen flex items-center justify-center">
-          <p className="text-on-surface-variant">Hali hech qanday dorama yuklanmagan yoki bazaga ulanishda xatolik yuz berdi.</p>
+        <main className="w-full pt-20 bg-background min-h-screen flex flex-col items-center justify-center p-4 text-center">
+          <p className="text-on-surface-variant mb-4">Hali hech qanday dorama yuklanmagan yoki bazaga ulanishda xatolik yuz berdi.</p>
+          {error && (
+            <div className="bg-error/10 text-error p-4 rounded-xl max-w-lg overflow-auto text-sm text-left">
+              <strong>Xatolik tafsilotlari:</strong><br/>
+              {error.message || JSON.stringify(error)}
+            </div>
+          )}
+          {(!dbDramas || dbDramas.length === 0) && !error && (
+            <div className="bg-primary/10 text-primary p-4 rounded-xl max-w-lg text-sm mt-4">
+              Baza bo'sh. Hech qanday dorama topilmadi!
+            </div>
+          )}
         </main>
         <Footer />
       </>
