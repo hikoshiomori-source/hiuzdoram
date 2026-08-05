@@ -26,7 +26,7 @@ export default function AdminLayoutClient({ children }: { children: React.ReactN
               admin_panel_settings
             </span>
             <span className="text-lg font-bold text-on-surface tracking-tight">
-              Nocturne <span className="text-primary">Admin</span>
+              HiUzDoram <span className="text-primary">Admin</span>
             </span>
           </Link>
         </div>

@@ -21,7 +21,7 @@ export default function SettingsPage() {
             </label>
             <input
               className="bg-surface-base/50 text-on-surface text-sm rounded-xl py-3 px-4 outline-none border border-border-glass focus:border-primary transition-all max-w-md"
-              defaultValue="Nocturne Dorama"
+              defaultValue="HiUzDoram"
             />
           </div>
           <div className="flex flex-col gap-1.5">

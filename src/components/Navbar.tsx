@@ -29,14 +29,14 @@ export default function Navbar() {
           <div className="relative w-8 h-8 rounded-lg overflow-hidden shadow-[0_0_10px_rgba(210,187,255,0.2)] group-hover:shadow-[0_0_15px_rgba(210,187,255,0.4)] transition-shadow">
             <Image
               src={IMAGES.logo}
-              alt="Nocturne Dorama"
+              alt="HiUzDoram"
               fill
               className="object-contain"
               sizes="32px"
             />
           </div>
           <span className="hidden lg:block text-xl font-bold tracking-tight text-primary group-hover:text-primary-fixed drop-shadow-[0_0_5px_rgba(210,187,255,0.3)] transition-all">
-            Nocturne
+            HiUzDoram
           </span>
         </Link>
 

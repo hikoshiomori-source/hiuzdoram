@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Nocturne Dorama — Premium Asian Drama Streaming",
+  title: "HiUzDoram — Premium Asian Drama Streaming",
   description:
-    "Discover and watch the best Korean, Japanese, and Chinese dramas with Uzbek subtitles. Premium streaming experience with Nocturne Dorama.",
+    "Discover and watch the best Korean, Japanese, and Chinese dramas with Uzbek subtitles. Premium streaming experience with HiUzDoram.",
   keywords: ["dorama", "kdrama", "streaming", "korean drama", "uzbek subtitles"],
 };
 

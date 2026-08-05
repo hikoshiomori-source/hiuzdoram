@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
-            <h3 className="text-xl font-bold text-primary mb-3">Nocturne</h3>
+            <h3 className="text-xl font-bold text-primary mb-3">HiUzDoram</h3>
             <p className="text-sm text-on-surface-variant leading-relaxed">
               Premium Asian doramalar platformasi. Eng sara koreyscha, yaponcha va xitoycha seriallarni o&apos;zbek subtitrlar bilan tomosha qiling.
             </p>
