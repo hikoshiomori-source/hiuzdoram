@@ -29,15 +29,17 @@ export default async function SchedulePage() {
     .select(`
       id, title, poster_url, release_days, release_time,
       episodes (id)
-    `)
-    .eq('status', 'Ongoing');
+    `);
 
   const dramas = dbDramas || [];
 
   const schedule = weekDays.map((wd, i) => {
-    const dayDramas = dramas.filter(d => 
-      Array.isArray(d.release_days) && d.release_days.includes(wd.day)
-    );
+    const dayDramas = dramas.filter(d => {
+      const daysArray = Array.isArray(d.release_days) 
+        ? d.release_days 
+        : (typeof d.release_days === 'string' ? d.release_days.replace(/^{|}$/g, '').split(',') : []);
+      return daysArray.includes(wd.day);
+    });
 
     return {
       ...wd,
