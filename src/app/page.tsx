@@ -220,24 +220,6 @@ export default async function HomePage() {
                 ))}
               </div>
             </div>
-
-            {/* VIP CTA */}
-            <div className="bg-gradient-to-br from-inverse-primary/30 to-primary-container/20 border border-primary/20 rounded-2xl p-6 backdrop-blur-md relative overflow-hidden">
-              <div className="absolute -top-8 -right-8 w-24 h-24 bg-primary/30 rounded-full blur-2xl" />
-              <span
-                className="material-symbols-outlined text-4xl text-primary mb-3"
-                style={{ fontVariationSettings: "'FILL' 1" }}
-              >
-                workspace_premium
-              </span>
-              <h3 className="text-lg font-bold text-on-surface mb-2">VIP Obuna</h3>
-              <p className="text-sm text-on-surface-variant mb-4">
-                Reklamasiz, 4K sifatda va eng birinchi bo&apos;lib yangi epizodlarni ko&apos;ring.
-              </p>
-              <button className="w-full py-2.5 bg-gradient-to-r from-primary to-primary-container text-on-primary rounded-full text-sm font-semibold hover:shadow-[0_0_20px_rgba(210,187,255,0.4)] transition-all hover:scale-[1.02]">
-                Obuna bo&apos;lish
-              </button>
-            </div>
           </aside>
         </div>
       </main>
