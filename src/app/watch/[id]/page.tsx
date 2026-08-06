@@ -4,9 +4,9 @@ import { notFound } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import MoverPlayer from "@/components/MoverPlayer";
-import { comments, IMAGES } from "@/lib/data"; // we'll keep comments mock for now since it's not strictly requested
+import ViewTracker from "@/components/ViewTracker";
 import { createClient } from "@supabase/supabase-js";
-export const dynamic = 'force-dynamic'; // Qo'shimcha parametrlar (?ep=) ishlashi uchun
+export const dynamic = 'force-dynamic';
 
 interface PageProps {
   params: Promise<{ id: string }>;
@@ -85,6 +85,7 @@ export default async function WatchPage({ params, searchParams }: PageProps) {
   return (
     <>
       <Navbar />
+      <ViewTracker dramaId={drama.id} />
       <main className="w-full pt-16 md:pt-20 bg-background min-h-screen">
         <div className="w-full max-w-[1600px] mx-auto px-4 md:px-6 py-6 md:py-8 grid grid-cols-1 lg:grid-cols-12 gap-8 relative z-10">
           
@@ -92,15 +93,14 @@ export default async function WatchPage({ params, searchParams }: PageProps) {
           <div className="lg:col-span-8 xl:col-span-9 flex flex-col gap-6">
             
             {/* Player Container */}
-            <div className="w-full bg-surface-base rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl border border-border-glass">
-              {/* MoverPlayer takes the embed URL from the DB */}
+            <div className="w-full bg-surface-base rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl border border-border-glass animate-scale-in">
               <MoverPlayer 
                 key={currentEpisode.id}
                 embedUrl={currentEpisode.moverEmbedUrl} 
                 title={`${drama.title} - ${currentEpisode.number}-qism`} 
               />
               
-              {/* Player Bottom Bar */}
+              {/* Player Bottom Bar — Title & Episode info only */}
               <div className="bg-surface-container-low p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-t border-border-glass">
                 <div>
                   <h1 className="text-xl md:text-2xl font-bold text-on-surface">
@@ -110,21 +110,17 @@ export default async function WatchPage({ params, searchParams }: PageProps) {
                     {currentEpisode.number}-qism: {currentEpisode.title}
                   </p>
                 </div>
-                <div className="flex items-center gap-3">
-                  <button className="flex items-center gap-2 px-4 py-2 rounded-full bg-surface-container-high hover:bg-surface-variant text-on-surface transition-colors">
-                    <span className="material-symbols-outlined text-xl">favorite</span>
-                    Yoqdi
-                  </button>
-                  <button className="flex items-center gap-2 px-4 py-2 rounded-full bg-surface-container-high hover:bg-surface-variant text-on-surface transition-colors">
-                    <span className="material-symbols-outlined text-xl">share</span>
-                    Ulashish
-                  </button>
+                <div className="flex items-center gap-3 text-sm text-text-secondary">
+                  <span className="flex items-center gap-1">
+                    <span className="material-symbols-outlined text-lg">visibility</span>
+                    {drama.views} ko&apos;rishlar
+                  </span>
                 </div>
               </div>
             </div>
 
             {/* Synopsis & Meta */}
-            <div className="bg-surface-glass p-6 rounded-2xl backdrop-blur-md border border-border-glass">
+            <div className="glass-panel p-6 animate-fade-in-up" style={{ animationDelay: "100ms" }}>
               <div className="flex flex-wrap items-center gap-6 mb-4 text-sm font-medium">
                 <div className="flex items-center gap-2 text-brand-rose">
                   <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
@@ -132,7 +128,7 @@ export default async function WatchPage({ params, searchParams }: PageProps) {
                 </div>
                 <div className="flex items-center gap-2 text-on-surface-variant">
                   <span className="material-symbols-outlined">visibility</span>
-                  {drama.views} Ko'rishlar
+                  {drama.views} Ko&apos;rishlar
                 </div>
                 <div className="flex items-center gap-2 text-on-surface-variant">
                   <span className="material-symbols-outlined">calendar_today</span>
@@ -150,58 +146,11 @@ export default async function WatchPage({ params, searchParams }: PageProps) {
                 ))}
               </div>
             </div>
-
-            {/* Comments Section (Mocked for now) */}
-            <div className="bg-surface-glass p-6 rounded-2xl backdrop-blur-md border border-border-glass">
-              <h3 className="text-lg font-bold text-on-surface mb-6 flex items-center gap-2">
-                <span className="material-symbols-outlined text-primary">chat</span>
-                Izohlar ({comments.length})
-              </h3>
-              
-              <div className="flex gap-4 mb-8">
-                <div className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0 border border-border-glass">
-                  <Image src={IMAGES.userAvatar} alt="User" width={40} height={40} className="object-cover" />
-                </div>
-                <div className="flex-1">
-                  <input
-                    type="text"
-                    placeholder="Izoh yozish..."
-                    className="w-full bg-surface-base border border-border-glass rounded-xl px-4 py-3 text-sm text-on-surface outline-none focus:border-primary/50 focus:bg-surface-container-lowest transition-colors"
-                  />
-                  <div className="flex justify-end mt-2">
-                    <button className="px-6 py-2 rounded-full bg-primary text-on-primary text-sm font-semibold hover:bg-primary-container transition-colors shadow-lg">
-                      Yuborish
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex flex-col gap-6">
-                {comments.map((comment) => (
-                  <div key={comment.id} className="flex gap-4">
-                    <div className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0">
-                      <Image src={comment.user.avatar} alt={comment.user.name} width={40} height={40} className="object-cover" />
-                    </div>
-                    <div>
-                      <div className="flex items-center gap-2 mb-1">
-                        <span className="font-semibold text-on-surface text-sm">{comment.user.name}</span>
-                        <span className="text-xs text-text-secondary">{comment.time}</span>
-                      </div>
-                      <p className="text-sm text-on-surface-variant mb-2">{comment.text}</p>
-                      <button className="flex items-center gap-1 text-xs text-text-secondary hover:text-primary transition-colors">
-                        <span className="material-symbols-outlined text-base">thumb_up</span>
-                        {comment.likes}
-                      </button>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
           </div>
 
           {/* Right Column: Episode List */}
           <div className="lg:col-span-4 xl:col-span-3 flex flex-col gap-6">
-            <div className="bg-surface-container/50 border border-border-glass rounded-2xl overflow-hidden backdrop-blur-md sticky top-24">
+            <div className="glass-panel overflow-hidden sticky top-24 animate-slide-in-right">
               <div className="p-4 bg-surface-container-low border-b border-border-glass flex justify-between items-center">
                 <h3 className="font-bold text-on-surface">Qismlar</h3>
                 <span className="text-xs text-primary font-medium bg-primary/10 px-2 py-1 rounded">
@@ -209,17 +158,18 @@ export default async function WatchPage({ params, searchParams }: PageProps) {
                 </span>
               </div>
               <div className="flex flex-col max-h-[600px] overflow-y-auto scrollbar-hide">
-                {drama.episodes.map((ep: any) => {
+                {drama.episodes.map((ep: any, i: number) => {
                   const isActive = ep.id === currentEpisode.id;
                   return (
                     <Link
                       key={ep.id}
                       href={`/watch/${drama.id}?ep=${ep.id}`}
-                      className={`flex items-center gap-4 p-4 border-b border-border-glass/30 transition-all ${
+                      className={`flex items-center gap-4 p-4 border-b border-border-glass/30 transition-premium ${
                         isActive 
                         ? "bg-primary/10 border-l-2 border-l-primary" 
                         : "hover:bg-surface-variant/50 border-l-2 border-l-transparent"
                       }`}
+                      style={{ animationDelay: `${i * 50}ms` }}
                     >
                       <div className="relative w-24 h-16 rounded-md overflow-hidden flex-shrink-0">
                         <Image

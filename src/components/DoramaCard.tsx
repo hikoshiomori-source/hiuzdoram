@@ -12,11 +12,11 @@ export default function DoramaCard({ drama, index }: DoramaCardProps) {
   return (
     <Link
       href={`/watch/${drama.id}`}
-      className="flex flex-col gap-3 group cursor-pointer relative"
-      style={{ animationDelay: index ? `${index * 80}ms` : "0ms" }}
+      className="flex flex-col gap-3 group cursor-pointer relative animate-card-entrance"
+      style={{ animationDelay: index ? `${index * 60}ms` : "0ms" }}
     >
       {/* Poster */}
-      <div className="relative w-full aspect-[2/3] rounded-xl overflow-hidden shadow-lg group-hover:shadow-[0_0_25px_rgba(115,46,228,0.4)] transition-all duration-300 group-hover:-translate-y-2 group-hover:scale-[1.02]">
+      <div className="relative w-full aspect-[2/3] rounded-xl overflow-hidden shadow-lg group-hover:shadow-[0_0_25px_rgba(115,46,228,0.4)] transition-premium group-hover:-translate-y-2 group-hover:scale-[1.02]">
         <Image
           src={drama.poster || "https://placehold.co/400x600/1a1a24/732ee4?text=No+Poster"}
           alt={drama.title || "Dorama"}
@@ -29,9 +29,9 @@ export default function DoramaCard({ drama, index }: DoramaCardProps) {
         {/* Badges */}
         <div className="absolute top-2 left-2 right-2 flex justify-between items-start">
           <span
-            className={`px-2 py-0.5 rounded text-xs font-medium shadow-md ${
+            className={`px-2 py-0.5 rounded text-xs font-medium shadow-md backdrop-blur-sm ${
               drama.status === "Ongoing"
-                ? "bg-surface-glass backdrop-blur-md border border-border-glass text-on-surface"
+                ? "bg-surface-glass border border-border-glass text-on-surface"
                 : drama.status === "Completed"
                 ? "bg-success/90 text-surface-base"
                 : "bg-primary/90 text-on-primary"
@@ -43,7 +43,7 @@ export default function DoramaCard({ drama, index }: DoramaCardProps) {
               ? "Tugallangan"
               : "YANGI"}
           </span>
-          <span className="flex items-center gap-1 px-2 py-0.5 rounded bg-brand-rose/90 text-white text-xs font-medium shadow-md">
+          <span className="flex items-center gap-1 px-2 py-0.5 rounded bg-brand-rose/90 text-white text-xs font-medium shadow-md backdrop-blur-sm">
             <span
               className="material-symbols-outlined text-sm"
               style={{ fontVariationSettings: "'FILL' 1" }}
@@ -54,9 +54,17 @@ export default function DoramaCard({ drama, index }: DoramaCardProps) {
           </span>
         </div>
 
+        {/* View Count Badge */}
+        <div className="absolute bottom-2 left-2">
+          <span className="flex items-center gap-1 px-2 py-0.5 rounded-md bg-black/60 backdrop-blur-sm text-white text-xs font-medium">
+            <span className="material-symbols-outlined text-xs">visibility</span>
+            {drama.views}
+          </span>
+        </div>
+
         {/* Hover Play Icon */}
-        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <div className="w-12 h-12 rounded-full bg-primary/80 backdrop-blur flex items-center justify-center text-on-primary shadow-[0_0_20px_rgba(210,187,255,0.8)]">
+        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+          <div className="w-14 h-14 rounded-full bg-primary/80 backdrop-blur flex items-center justify-center text-on-primary shadow-[0_0_24px_rgba(210,187,255,0.8)] scale-75 group-hover:scale-100 transition-transform duration-300">
             <span
               className="material-symbols-outlined text-3xl"
               style={{ fontVariationSettings: "'FILL' 1" }}
@@ -69,7 +77,7 @@ export default function DoramaCard({ drama, index }: DoramaCardProps) {
 
       {/* Title */}
       <div>
-        <h3 className="font-semibold text-on-surface truncate group-hover:text-primary transition-colors">
+        <h3 className="font-semibold text-on-surface truncate group-hover:text-primary transition-premium">
           {drama.title}
         </h3>
         <p className="text-xs text-text-secondary">
