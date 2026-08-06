@@ -8,73 +8,62 @@ interface DoramaCardProps {
 }
 
 export default function DoramaCard({ drama, index }: DoramaCardProps) {
-  const currentEp = drama.episodes.length;
   return (
     <Link
       href={`/watch/${drama.id}`}
-      className="flex flex-col gap-3 group cursor-pointer relative animate-card-entrance"
-      style={{ animationDelay: index ? `${index * 60}ms` : "0ms" }}
+      className="block group"
+      style={{ animationDelay: index ? `${index * 50}ms` : "0ms" }}
     >
-      {/* Poster — Cinematic hover */}
-      <div className="relative w-full aspect-[2/3] rounded-xl overflow-hidden shadow-lg card-cinematic">
+      <div className="relative aspect-[2/3] w-full rounded-xl overflow-hidden bg-[#18181b] card-hover">
         <Image
-          src={drama.poster || "https://placehold.co/400x600/1a1a24/732ee4?text=No+Poster"}
-          alt={`${drama.title} — ${drama.genres.join(", ")} dorama poster`}
+          src={drama.poster || "https://placehold.co/400x600/18181b/e11d48?text=No+Poster"}
+          alt={`${drama.title} poster`}
           fill
-          className="object-cover transition-transform duration-700 group-hover:scale-110"
-          sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
+          className="w-full h-full object-cover transition-smooth"
+          sizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 16vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
-
-        {/* Badges */}
-        <div className="absolute top-2 left-2 right-2 flex justify-between items-start">
-          <span
-            className={`px-2 py-0.5 rounded text-xs font-medium shadow-md backdrop-blur-sm ${
-              drama.status === "Ongoing"
-                ? "bg-surface-glass border border-border-glass text-on-surface"
-                : drama.status === "Completed"
-                ? "bg-success/90 text-surface-base"
-                : "bg-primary/90 text-on-primary"
-            }`}
-          >
-            {drama.status === "Ongoing"
-              ? `Ep ${currentEp}/${drama.totalEpisodes}`
-              : drama.status === "Completed"
-              ? "Tugallangan"
-              : "YANGI"}
-          </span>
-          <span className="flex items-center gap-1 px-2 py-0.5 rounded bg-brand-rose/90 text-white text-xs font-medium shadow-md backdrop-blur-sm">
+        
+        {/* Hover Overlay */}
+        <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-smooth flex items-center justify-center">
+          <div className="w-12 h-12 rounded-full bg-[#e11d48] flex items-center justify-center translate-y-4 group-hover:translate-y-0 transition-smooth shadow-[0_0_15px_rgba(225,29,72,0.5)]">
             <span
-              className="material-symbols-outlined text-sm"
-              style={{ fontVariationSettings: "'FILL' 1" }}
-            >
-              star
-            </span>
-            {drama.rating}
-          </span>
-        </div>
-
-        {/* Hover Play Icon */}
-        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
-          <div className="w-14 h-14 rounded-full bg-primary/80 backdrop-blur flex items-center justify-center text-on-primary shadow-[0_0_24px_rgba(210,187,255,0.8)] scale-75 group-hover:scale-100 transition-transform duration-300">
-            <span
-              className="material-symbols-outlined text-3xl"
+              className="material-symbols-outlined text-white text-2xl"
               style={{ fontVariationSettings: "'FILL' 1" }}
             >
               play_arrow
             </span>
           </div>
         </div>
-      </div>
 
-      {/* Title */}
-      <div>
-        <h3 className="font-semibold text-on-surface truncate group-hover:text-primary transition-premium">
+        {/* Rating Badge */}
+        {drama.rating && (
+          <div className="absolute top-2 right-2 bg-black/70 backdrop-blur-sm text-white text-xs font-semibold px-2 py-1 rounded-md flex items-center gap-1 z-10 border border-white/10">
+            <span className="material-symbols-outlined text-[12px] text-[#e11d48]" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+            {drama.rating}
+          </div>
+        )}
+        
+        {/* New Episode Badge (optional) */}
+        {drama.episodes && drama.episodes.length > 0 && (
+          <div className="absolute top-2 left-2 bg-[#e11d48] text-white text-[10px] font-bold px-2 py-1 rounded-sm uppercase tracking-wide z-10">
+            {drama.episodes.length} Qism
+          </div>
+        )}
+      </div>
+      
+      <div className="mt-3">
+        <h3 className="text-sm font-semibold text-[#e4e4e7] group-hover:text-[#e11d48] transition-colors duration-200 text-truncate-2">
           {drama.title}
         </h3>
-        <p className="text-xs text-text-secondary">
-          {drama.genres.join(", ")} • {drama.year}
-        </p>
+        <div className="flex items-center gap-2 mt-1 text-xs text-[#a1a1aa]">
+          <span>{drama.year}</span>
+          {drama.country && (
+            <>
+              <span className="w-1 h-1 rounded-full bg-[#3f3f46]"></span>
+              <span>{drama.country}</span>
+            </>
+          )}
+        </div>
       </div>
     </Link>
   );

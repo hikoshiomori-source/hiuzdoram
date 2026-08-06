@@ -4,9 +4,14 @@ import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 
 export async function loginAsAdmin(formData: FormData) {
-  const code = formData.get("code");
+  const username = formData.get("username")?.toString();
+  const password = formData.get("password")?.toString();
 
-  if (code === "NOCTURNE_ADMIN_2024") {
+  // O'zingiz xohlagan login/parol (yoki .env dan olasiz)
+  const ADMIN_USERNAME = process.env.ADMIN_USERNAME || "admin";
+  const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || "hiuzdoram2024";
+
+  if (username === ADMIN_USERNAME && password === ADMIN_PASSWORD) {
     // Await cookies() to resolve the Promise before calling .set()
     const cookieStore = await cookies();
     cookieStore.set("admin_token", "true", {
@@ -18,7 +23,7 @@ export async function loginAsAdmin(formData: FormData) {
     return { success: true };
   }
 
-  return { error: "Noto'g'ri kod!" };
+  return { error: "Login yoki parol noto'g'ri!" };
 }
 
 export async function logoutAdmin() {

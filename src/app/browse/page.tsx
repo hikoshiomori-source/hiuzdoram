@@ -67,7 +67,7 @@ export default async function BrowsePage() {
   return (
     <>
       <Navbar />
-      <main className="w-full pt-16 md:pt-20 bg-background min-h-screen">
+      <main className="w-full bg-[#09090b] min-h-screen">
         <ClientBrowse dramas={dramas} />
       </main>
       <Footer />

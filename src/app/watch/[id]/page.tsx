@@ -194,133 +194,121 @@ export default async function WatchPage({ params, searchParams }: PageProps) {
       />
 
       <Navbar />
-      <main className="w-full pt-16 md:pt-20 bg-background min-h-screen">
-        <div className="w-full max-w-[1600px] mx-auto px-4 md:px-6 py-6 md:py-8 grid grid-cols-1 lg:grid-cols-12 gap-8 relative z-10">
+      <main className="w-full pt-20 bg-[#09090b] min-h-screen pb-16">
+        <div className="max-w-[1600px] mx-auto px-4 md:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-8">
+          
           {/* Left Column: Video & Info */}
           <article className="lg:col-span-8 xl:col-span-9 flex flex-col gap-6">
+            
             {/* Player Container */}
-            <div className="w-full bg-surface-base rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl border border-border-glass animate-scale-in">
+            <div className="w-full bg-black rounded-xl overflow-hidden shadow-2xl border border-[#27272a] aspect-video flex flex-col">
               <MoverPlayer
                 key={currentEpisode.id}
                 embedUrl={currentEpisode.moverEmbedUrl}
                 title={`${drama.title} — ${currentEpisode.number}-qism`}
               />
+            </div>
 
-              {/* Player Bottom Bar */}
-              <div className="bg-surface-container-low p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-t border-border-glass">
-                <div>
-                  <h1 className="text-xl md:text-2xl font-bold text-on-surface">
-                    {drama.title}
-                  </h1>
-                  <p className="text-sm text-primary font-medium mt-1">
-                    {currentEpisode.number}-qism: {currentEpisode.title}
-                  </p>
-                </div>
-                <div className="flex items-center gap-3 text-sm text-text-secondary">
-                  <span className="flex items-center gap-1">
-                    <span className="material-symbols-outlined text-lg">calendar_today</span>
-                    {drama.year}
-                  </span>
-                  <span className="flex items-center gap-1 text-brand-rose">
-                    <span className="material-symbols-outlined text-lg" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
-                    {drama.rating}
-                  </span>
-                </div>
+            {/* Title & Actions */}
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+              <div>
+                <h1 className="text-2xl md:text-3xl font-bold text-white mb-2">
+                  {drama.title} <span className="text-[#a1a1aa] text-lg font-normal">({drama.year})</span>
+                </h1>
+                <p className="text-[#e11d48] font-medium">
+                  {currentEpisode.number}-qism: {currentEpisode.title}
+                </p>
+              </div>
+              <div className="flex items-center gap-3">
+                <button className="flex items-center gap-2 bg-[#27272a] hover:bg-[#3f3f46] text-white px-4 py-2 rounded-lg transition-colors font-medium text-sm">
+                  <span className="material-symbols-outlined text-[20px]">add</span>
+                  Ro'yxatga qo'shish
+                </button>
+                <button className="flex items-center justify-center w-10 h-10 bg-[#27272a] hover:bg-[#3f3f46] text-white rounded-lg transition-colors">
+                  <span className="material-symbols-outlined text-[20px]">share</span>
+                </button>
               </div>
             </div>
 
             {/* Synopsis & Meta */}
-            <section
-              className="glass-panel p-6 animate-fade-in-up"
-              style={{ animationDelay: "100ms" }}
-            >
-              <h2 className="text-lg font-bold text-on-surface mb-4 flex items-center gap-2">
-                <span className="material-symbols-outlined text-primary">info</span>
-                Ma&apos;lumot
-              </h2>
-              <div className="flex flex-wrap items-center gap-6 mb-4 text-sm font-medium">
-                <div className="flex items-center gap-2 text-brand-rose">
-                  <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
-                  {drama.rating} Reyting
-                </div>
-                <div className="flex items-center gap-2 text-on-surface-variant">
-                  <span className="material-symbols-outlined">calendar_today</span>
-                  {drama.year}
-                </div>
-                <div className="flex items-center gap-2 text-on-surface-variant">
-                  <span className="material-symbols-outlined">public</span>
+            <section className="bg-[#18181b] p-6 rounded-xl border border-[#27272a]">
+              <div className="flex flex-wrap items-center gap-4 mb-4 text-sm font-medium text-[#a1a1aa]">
+                <div className="flex items-center gap-1">
+                  <span className="material-symbols-outlined text-[18px]">public</span>
                   {drama.country}
                 </div>
-                <div className="flex items-center gap-2 text-on-surface-variant">
-                  <span className="material-symbols-outlined">movie</span>
-                  {drama.totalEpisodes} qism
+                <div className="flex items-center gap-1">
+                  <span className="material-symbols-outlined text-[18px]">movie</span>
+                  {drama.totalEpisodes} Qism
+                </div>
+                <div className="flex items-center gap-1 text-[#e11d48]">
+                  <span className="material-symbols-outlined text-[18px]" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+                  {drama.rating}
                 </div>
               </div>
-              <p className="text-on-surface-variant leading-relaxed">
+              
+              <p className="text-sm text-[#e4e4e7] leading-relaxed mb-6">
                 {drama.synopsis}
               </p>
-              <div className="mt-4 flex flex-wrap gap-2">
+              
+              <div className="flex flex-wrap gap-2">
                 {drama.genres.map((g: string) => (
-                  <span
-                    key={g}
-                    className="px-3 py-1 rounded-lg bg-surface-container-high text-xs text-text-secondary border border-border-glass"
-                  >
+                  <Link href={`/browse?genre=${g}`} key={g} className="px-3 py-1 bg-[#27272a] hover:bg-[#3f3f46] text-[#a1a1aa] hover:text-white rounded-md text-xs font-medium transition-colors">
                     {g}
-                  </span>
+                  </Link>
                 ))}
               </div>
             </section>
           </article>
 
           {/* Right Column: Episode List */}
-          <aside className="lg:col-span-4 xl:col-span-3 flex flex-col gap-6">
-            <div className="glass-panel overflow-hidden sticky top-24 animate-slide-in-right">
-              <div className="p-4 bg-surface-container-low border-b border-border-glass flex justify-between items-center">
-                <h2 className="font-bold text-on-surface">Qismlar</h2>
-                <span className="text-xs text-primary font-medium bg-primary/10 px-2 py-1 rounded">
-                  {drama.episodes.length} qism
+          <aside className="lg:col-span-4 xl:col-span-3">
+            <div className="bg-[#18181b] rounded-xl border border-[#27272a] overflow-hidden sticky top-24 max-h-[calc(100vh-120px)] flex flex-col">
+              <div className="p-4 bg-[#27272a]/50 border-b border-[#27272a] flex justify-between items-center shrink-0">
+                <h2 className="text-lg font-bold text-white">Qismlar ro'yxati</h2>
+                <span className="text-xs font-bold bg-[#e11d48] text-white px-2 py-1 rounded">
+                  {drama.episodes.length} QISM
                 </span>
               </div>
-              <div className="flex flex-col max-h-[600px] overflow-y-auto scrollbar-hide">
+              
+              <div className="flex-1 overflow-y-auto scrollbar-hide p-3 space-y-2">
                 {drama.episodes.map((ep: any) => {
                   const isActive = ep.id === currentEpisode.id;
                   return (
                     <Link
                       key={ep.id}
                       href={`/watch/${drama.id}?ep=${ep.id}`}
-                      className={`flex items-center gap-4 p-4 border-b border-border-glass/30 transition-premium ${
+                      className={`flex items-center gap-3 p-3 rounded-lg transition-colors ${
                         isActive
-                          ? "bg-primary/10 border-l-2 border-l-primary"
-                          : "hover:bg-surface-variant/50 border-l-2 border-l-transparent"
+                          ? "bg-[#27272a] border border-[#3f3f46]"
+                          : "hover:bg-[#27272a]/50 border border-transparent"
                       }`}
                     >
-                      <div className="relative w-24 h-16 rounded-md overflow-hidden flex-shrink-0">
+                      <div className="relative w-24 h-[54px] rounded overflow-hidden shrink-0 bg-black">
                         <Image
-                          src={drama.backdrop}
+                          src={drama.backdrop || drama.poster}
                           alt={`${drama.title} ${ep.number}-qism`}
                           fill
-                          className="object-cover opacity-80"
+                          className={`object-cover ${isActive ? 'opacity-50' : 'opacity-80'}`}
                           sizes="96px"
                         />
-                        <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-                          <span className="material-symbols-outlined text-white opacity-80">
-                            play_circle
-                          </span>
-                        </div>
+                        {isActive && (
+                          <div className="absolute inset-0 flex items-center justify-center">
+                            <span className="material-symbols-outlined text-white">play_arrow</span>
+                          </div>
+                        )}
                       </div>
-                      <div className="flex-1 min-w-0">
+                      
+                      <div className="min-w-0">
                         <h3
                           className={`text-sm font-semibold truncate ${
-                            isActive ? "text-primary" : "text-on-surface"
+                            isActive ? "text-[#e11d48]" : "text-[#e4e4e7]"
                           }`}
                         >
                           {ep.number}-qism
                         </h3>
-                        <p className="text-xs text-text-secondary truncate mt-0.5">
+                        <p className="text-xs text-[#a1a1aa] truncate mt-0.5">
                           {ep.title}
-                        </p>
-                        <p className="text-xs text-text-secondary/60 mt-1">
-                          {ep.duration}
                         </p>
                       </div>
                     </Link>

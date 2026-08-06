@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>hiuzdoram - Premium Dorama Streaming</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&amp;family=Outfit:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-high": "#2a2a2c",
+                      "error-container": "#93000a",
+                      "on-surface": "#e5e1e4",
+                      "deep-surface": "#18181b",
+                      "primary": "#ffb3b6",
+                      "on-primary-fixed": "#40000c",
+                      "surface-container": "#201f22",
+                      "background": "#131315",
+                      "tertiary-container": "#747377",
+                      "surface-dim": "#131315",
+                      "on-primary-container": "#fffaf9",
+                      "on-primary": "#68001a",
+                      "primary-fixed-dim": "#ffb3b6",
+                      "on-secondary": "#2f3132",
+                      "surface-variant": "#353437",
+                      "on-primary-fixed-variant": "#920028",
+                      "error": "#ffb4ab",
+                      "whisper-border": "rgba(39, 39, 42, 0.6)",
+                      "on-secondary-container": "#b4b5b6",
+                      "on-secondary-fixed": "#1a1c1d",
+                      "surface": "#131315",
+                      "on-tertiary-fixed-variant": "#47464a",
+                      "surface-container-highest": "#353437",
+                      "secondary-fixed": "#e2e2e3",
+                      "tertiary-fixed": "#e4e1e6",
+                      "secondary": "#c6c6c7",
+                      "on-tertiary-container": "#fdfafe",
+                      "outline": "#ac8889",
+                      "surface-bright": "#39393b",
+                      "secondary-fixed-dim": "#c6c6c7",
+                      "surface-container-low": "#1c1b1d",
+                      "muted-slate": "#a1a1aa",
+                      "primary-container": "#e11d48",
+                      "on-background": "#e5e1e4",
+                      "surface-tint": "#ffb3b6",
+                      "inverse-on-surface": "#313032",
+                      "on-secondary-fixed-variant": "#454748",
+                      "tertiary-fixed-dim": "#c8c5ca",
+                      "on-error-container": "#ffdad6",
+                      "tertiary": "#c8c5ca",
+                      "on-surface-variant": "#e5bdbe",
+                      "outline-variant": "#5c3f40",
+                      "primary-fixed": "#ffdada",
+                      "surface-container-lowest": "#0e0e10",
+                      "on-error": "#690005",
+                      "inverse-primary": "#be0037",
+                      "canvas-black": "#09090b",
+                      "secondary-container": "#454748",
+                      "inverse-surface": "#e5e1e4",
+                      "on-tertiary": "#303033",
+                      "on-tertiary-fixed": "#1b1b1e"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "section-gap": "80px",
+                      "container-max": "1200px",
+                      "gutter": "24px",
+                      "margin-mobile": "16px",
+                      "element-gap": "12px"
+              },
+              "fontFamily": {
+                      "headline-md": [
+                              "Outfit"
+                      ],
+                      "meta-sm-mono": [
+                              "JetBrains Mono"
+                      ],
+                      "headline-lg": [
+                              "Outfit"
+                      ],
+                      "meta-mono": [
+                              "JetBrains Mono"
+                      ],
+                      "body-md": [
+                              "Outfit"
+                      ],
+                      "display-xl": [
+                              "Outfit"
+                      ],
+                      "body-lg": [
+                              "Outfit"
+                      ],
+                      "headline-lg-mobile": [
+                              "Outfit"
+                      ]
+              },
+              "fontSize": {
+                      "headline-md": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "meta-sm-mono": [
+                              "12px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg": [
+                              "40px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "meta-mono": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "letterSpacing": "0.02em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-xl": [
+                              "64px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.04em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .cubic-scale {
+            transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        .cubic-scale:hover {
+            transform: scale(1.02);
+        }
+        .cinematic-shadow {
+            box-shadow: 0 10px 30px -10px rgba(9, 9, 11, 0.8);
+        }
+      </style>
+</head>
+<body class="bg-canvas-black text-on-surface font-body-md antialiased overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="bg-canvas-black dark:bg-canvas-black fixed top-0 w-full z-50 shadow-sm border-b-0">
+<div class="flex justify-between items-center w-full px-gutter py-4 max-w-container-max mx-auto">
+<!-- Brand Logo -->
+<div class="font-headline-md text-headline-md font-bold tracking-tight text-on-surface dark:text-on-surface">
+                hiuzdoram
+            </div>
+<!-- Search Bar (Centered) -->
+<div class="hidden md:flex flex-1 justify-center px-8">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-muted-slate" data-icon="search">search</span>
+<input class="w-full bg-deep-surface border border-whisper-border text-on-surface rounded-full py-2 pl-10 pr-4 focus:outline-none focus:ring-2 focus:ring-primary-container focus:border-transparent font-body-md placeholder-muted-slate transition-all duration-300" placeholder="Search dramas..." type="text"/>
+</div>
+</div>
+<!-- Trailing Icons -->
+<div class="flex items-center space-x-6 text-primary dark:text-primary-fixed-dim">
+<button class="hover:text-on-surface-variant transition-colors duration-300 scale(0.98) transition-transform duration-200">
+<span class="material-symbols-outlined text-2xl" data-icon="movie">movie</span>
+</button>
+<button class="hover:text-on-surface-variant transition-colors duration-300 scale(0.98) transition-transform duration-200">
+<span class="material-symbols-outlined text-2xl" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<main class="pt-[100px] pb-section-gap px-gutter max-w-container-max mx-auto">
+<section class="grid grid-cols-1 md:grid-cols-12 gap-gutter mb-section-gap">
+<!-- Featured Drama (Left, 2/3) -->
+<div class="md:col-span-8 relative rounded-[1rem] overflow-hidden cinematic-shadow cubic-scale group bg-deep-surface border border-whisper-border">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-60 transition-opacity duration-700 group-hover:opacity-40" data-alt="A cinematic, ultra-widescreen still from a highly-produced period dorama, 'The Moonlight Blade'. The scene depicts a solitary figure standing on a misty mountaintop at dusk. The lighting is moody and dramatic, utilizing a cool zinc color palette with a single striking accent of crimson red from a falling leaf. The overall style is deeply atmospheric, grounded, and extremely premium, rejecting any hyper-saturated artificial lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeEI4SF94mLyyKuhmrLM89d9ZaqFnRbGkLnUePgDwyvfYztCyX9ur7wE2jggZL9M2oJEvDpuF5J5h7zfRwxJ3J-AtNKIfWK2t-17TV0qbjstbvt7GGab9Cg-KV-alzsB2olNxpceEKzq6Pohsed_Wm7UObKNGW47pf6O7wiZCmLaXSYVLS9g828gv7PnOvQTKM335SUBmhggqqkUeusjVbvIwTv73yY4iV7Iy74E6afynQsJ5F_9vMDJnQ6Qw0INJnjmnXJVeFbghg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-canvas-black via-canvas-black/50 to-transparent"></div>
+</div>
+<div class="relative z-10 p-8 md:p-12 h-full flex flex-col justify-end min-h-[500px]">
+<div class="font-meta-mono text-meta-mono text-muted-slate mb-4 tracking-widest uppercase">
+                        Featured Premiere
+                    </div>
+<h1 class="font-display-xl text-display-xl text-on-surface mb-6 leading-tight">
+                        The Moonlight<br/>Blade
+                    </h1>
+<p class="font-body-lg text-body-lg text-muted-slate max-w-xl mb-8 leading-relaxed">
+                        A masterful tale of betrayal and redemption set against the stark backdrop of the northern territories. Cinematic restraint meets intense emotional depth in this season's most acclaimed historical drama.
+                    </p>
+<div class="flex items-center space-x-6">
+<button class="bg-primary-container text-on-primary-container px-8 py-4 rounded font-body-md font-semibold hover:bg-inverse-primary transition-colors duration-300 flex items-center space-x-2">
+<span class="material-symbols-outlined" data-icon="play_arrow" data-weight="fill">play_arrow</span>
+<span>Watch Now</span>
+</button>
+<button class="border border-whisper-border text-on-surface px-8 py-4 rounded font-body-md hover:bg-surface-variant transition-colors duration-300">
+                            Details
+                        </button>
+</div>
+</div>
+</div>
+<!-- Tonight's Broadcast (Right, 1/3) -->
+<div class="md:col-span-4 bg-deep-surface rounded-[1rem] border border-whisper-border p-8 flex flex-col">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-8 border-b border-whisper-border pb-4">
+                    Tonight's Broadcast
+                </h2>
+<div class="flex-1 flex flex-col space-y-6">
+<!-- Schedule Item -->
+<div class="flex items-start space-x-4 group cursor-pointer">
+<div class="font-meta-mono text-meta-mono text-primary pt-1 w-16 shrink-0">
+                            20:00
+                        </div>
+<div>
+<h3 class="font-body-lg text-body-lg text-on-surface group-hover:text-primary-container transition-colors duration-200">Silent Echoes</h3>
+<div class="font-meta-sm-mono text-meta-sm-mono text-muted-slate mt-1">EP 04 | Thriller</div>
+</div>
+</div>
+<!-- Schedule Item -->
+<div class="flex items-start space-x-4 group cursor-pointer">
+<div class="font-meta-mono text-meta-mono text-primary pt-1 w-16 shrink-0">
+                            21:30
+                        </div>
+<div>
+<h3 class="font-body-lg text-body-lg text-on-surface group-hover:text-primary-container transition-colors duration-200">Whispers in the Rain</h3>
+<div class="font-meta-sm-mono text-meta-sm-mono text-muted-slate mt-1">EP 12 | Romance</div>
+</div>
+</div>
+<!-- Schedule Item -->
+<div class="flex items-start space-x-4 group cursor-pointer">
+<div class="font-meta-mono text-meta-mono text-muted-slate pt-1 w-16 shrink-0">
+                            23:00
+                        </div>
+<div>
+<h3 class="font-body-md text-body-md text-muted-slate group-hover:text-on-surface transition-colors duration-200">City Lights Fade</h3>
+<div class="font-meta-sm-mono text-meta-sm-mono text-muted-slate mt-1 opacity-60">EP 01 | Urban Drama</div>
+</div>
+</div>
+<!-- Schedule Item -->
+<div class="flex items-start space-x-4 group cursor-pointer">
+<div class="font-meta-mono text-meta-mono text-muted-slate pt-1 w-16 shrink-0">
+                            00:15
+                        </div>
+<div>
+<h3 class="font-body-md text-body-md text-muted-slate group-hover:text-on-surface transition-colors duration-200">Midnight Diner: Tokyo</h3>
+<div class="font-meta-sm-mono text-meta-sm-mono text-muted-slate mt-1 opacity-60">EP 08 | Slice of Life</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Primary Content Grid -->
+<section>
+<div class="flex justify-between items-end mb-8">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Curated Selection</h2>
+<a class="font-meta-mono text-meta-mono text-muted-slate hover:text-on-surface transition-colors duration-200 flex items-center" href="#">
+                    View All Archives <span class="material-symbols-outlined text-sm ml-1" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-12">
+<!-- Card 1 -->
+<a class="block group" href="#">
+<div class="aspect-[2/3] rounded-[1rem] overflow-hidden bg-deep-surface mb-4 border border-whisper-border cubic-scale relative">
+<img class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300" data-alt="A portrait-oriented poster for a dorama titled 'Neon Noir'. The image shows a gritty, rain-slicked city street corner illuminated by dim, moody lighting. A silhouette of a detective stands in the foreground. The aesthetic strictly adheres to the high-end zinc palette with deep shadows, rejecting bright glowing neons in favor of cinematic restraint." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCP_hh3MzE_K_sDfwDEwFELe6aRRDb8BEjVO31RW1g-3jGaekAXsvuS32YGvTNzPlm0lQ_-zJH-1p5-awAY4qTJCKgi-fZTXJ5lHgdI2vGJlE1XFDjWtvZmlNlYgH6tVjLUZP0I2p_PS2b2yJa-ZRqSxxTerTOgvuW_66PWk9KIhaAPOiWkiInZxAEl726SGXif9lVp7tzv2nkN1iRaoWvpqgiAwYmRov98KJAuaSUoudJ7ax3TgJA3Hx6HDCeDH5wa_UAOq8vz42Ss"/>
+</div>
+<h3 class="font-body-lg text-body-lg text-on-surface leading-tight mb-1 group-hover:text-primary-container transition-colors duration-200">Neon Noir</h3>
+<div class="font-meta-mono text-meta-mono text-muted-slate">2023</div>
+</a>
+<!-- Card 2 -->
+<a class="block group" href="#">
+<div class="aspect-[2/3] rounded-[1rem] overflow-hidden bg-deep-surface mb-4 border border-whisper-border cubic-scale relative">
+<img class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300" data-alt="A minimal, elegant poster for a historical dorama. The image features a close-up of hands pouring tea into a traditional ceramic cup resting on aged dark wood. The lighting is soft and natural, emphasizing textures and shadows within a muted zinc and slate color scheme. Highly professional and deeply atmospheric." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHrcs4NNfb3WVY02nFu5_D9pFrpNVQpaLDGD6jC8bjVGgfWZQKaTwMQjphn_NSBi_IrdW7XApCTh1HGCzBwPVC3a_RUZ5dnhvQy6vGr83uwoC_pBUH5QOBqDRPcpHmKwXrEvlMdqc4uci2CDCr_97I9agkDJq6FBZ3eKJNHHUa1vE8cBBY3sp_42zlhwhAlIwuvybDH4yJSa3sce4goHI7-CDYMRvzmJdNtqq3Z-bYh0zL9RDsy05ba65RAde5Z71gi2rI0ETs4-Ml"/>
+</div>
+<h3 class="font-body-lg text-body-lg text-on-surface leading-tight mb-1 group-hover:text-primary-container transition-colors duration-200">The Tea Master</h3>
+<div class="font-meta-mono text-meta-mono text-muted-slate">2024</div>
+</a>
+<!-- Card 3 -->
+<a class="block group" href="#">
+<div class="aspect-[2/3] rounded-[1rem] overflow-hidden bg-deep-surface mb-4 border border-whisper-border cubic-scale relative">
+<img class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300" data-alt="A stark, minimalist dorama poster showing a vast, empty architectural concrete space. A solitary figure walks down a long corridor. The shot utilizes striking asymmetrical composition and high contrast black-and-white (zinc scale) tones to convey isolation and psychological depth. Premium indie film aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_R24VKbhVrz90lKCYCIswq-1evtaDx6vKEUe4mJzVwY5TiRynbesof3-4nTFpttKdfTSjDH341cDZUN0zsgmmPbjhWOy1o02dVUVdHxBShfhwr89WQPVAnohhsEIgIj0b9-lwpFAHYWdjwiXsVbOgrHG3PKJ52_zbAHUFqelDa5s7VxKCWYk8fZi3cymkBFoBxntFOkXXUtaI8OwE0AFDFgVh08IbiKh2KU9T3i216lkDPoneynFdluk4KheCvVpq3sX7sHMqfGJ5"/>
+</div>
+<h3 class="font-body-lg text-body-lg text-on-surface leading-tight mb-1 group-hover:text-primary-container transition-colors duration-200">Concrete Horizons</h3>
+<div class="font-meta-mono text-meta-mono text-muted-slate">2022</div>
+</a>
+<!-- Card 4 -->
+<a class="block group" href="#">
+<div class="aspect-[2/3] rounded-[1rem] overflow-hidden bg-deep-surface mb-4 border border-whisper-border cubic-scale relative">
+<img class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300" data-alt="A beautifully understated dorama poster featuring a winter landscape. Bare branches of a tree frame a bleak, overcast sky. The color palette is almost monochromatic, relying on shades of zinc and slate gray to evoke a sense of cold realism and somber emotion. Sophisticated and devoid of flashy effects." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWJieQT5_5LNaDmf0cr2gJ5fQ3qR1WZapvyQoSIfq137V-DEMYi7pxpdJb2sxLSpK1c3o9A0jOjNlQc8Xmq2cEOr5oL3qaHo69eSwmPUCR9A2NpGm1T8qFhmmIrtO14IWn55N3BE2EXvhS1UDfa4i87EWamxzeL0AmX87soMNBB2cnDhu_t_wexVFDIiy7GD1dVFc1o_BMt26YA8o9zb2sZkxbnhcHUn5YRgBtk0k4jWZHZpPVSqtkpNq_MaO3M2YnlQeubNH9nsv-"/>
+</div>
+<h3 class="font-body-lg text-body-lg text-on-surface leading-tight mb-1 group-hover:text-primary-container transition-colors duration-200">Winter's Breath</h3>
+<div class="font-meta-mono text-meta-mono text-muted-slate">2024</div>
+</a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-deep-surface dark:bg-deep-surface w-full mt-section-gap border-t-0">
+<div class="flex flex-col md:flex-row justify-between items-center px-gutter py-12 w-full max-w-container-max mx-auto">
+<!-- Footer Logo -->
+<div class="font-headline-md text-headline-md text-on-surface mb-6 md:mb-0">
+                hiuzdoram
+            </div>
+<!-- Links -->
+<div class="flex space-x-8 font-meta-mono text-meta-mono">
+<a class="text-muted-slate hover:text-on-surface transition-all" href="#">Terms</a>
+<a class="text-muted-slate hover:text-on-surface transition-all" href="#">Privacy</a>
+<a class="text-muted-slate hover:text-on-surface transition-all" href="#">Support</a>
+<a class="text-muted-slate hover:text-on-surface transition-all" href="#">Press</a>
+</div>
+<!-- Copyright -->
+<div class="font-meta-mono text-meta-mono text-muted-slate mt-6 md:mt-0">
+                © 2024 hiuzdoram. All rights reserved.
+            </div>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,46 @@
+{
+  "name": "projects/15693685607449390000",
+  "projectId": "15693685607449390000",
+  "title": "Neon Premium Overhaul",
+  "visibility": "PRIVATE",
+  "projectType": "PROJECT_DESIGN",
+  "origin": "STITCH",
+  "screens": {
+    "home": {
+      "id": "27814ba7e73248ff878a43df52555228",
+      "sourceScreen": "projects/15693685607449390000/screens/27814ba7e73248ff878a43df52555228",
+      "width": 2560,
+      "height": 4134
+    },
+    "browse": {
+      "id": "11dbfc95d57d4d928db3cd7d9ab57e28",
+      "sourceScreen": "projects/15693685607449390000/screens/11dbfc95d57d4d928db3cd7d9ab57e28",
+      "width": 2560,
+      "height": 2048
+    },
+    "watch": {
+      "id": "7350972a5eea4062953f47c5f257e517",
+      "sourceScreen": "projects/15693685607449390000/screens/7350972a5eea4062953f47c5f257e517",
+      "width": 2560,
+      "height": 3142
+    },
+    "top-100": {
+      "id": "cab1b03bd5714b929adce2571ba84080",
+      "sourceScreen": "projects/15693685607449390000/screens/cab1b03bd5714b929adce2571ba84080",
+      "width": 2560,
+      "height": 2758
+    },
+    "schedule": {
+      "id": "4173602b95d54ea3b13ed85cf5dbd43f",
+      "sourceScreen": "projects/15693685607449390000/screens/4173602b95d54ea3b13ed85cf5dbd43f",
+      "width": 2560,
+      "height": 2390
+    },
+    "admin": {
+      "id": "bcf8e814221f448fa1663267f2d81555",
+      "sourceScreen": "projects/15693685607449390000/screens/bcf8e814221f448fa1663267f2d81555",
+      "width": 2816,
+      "height": 2458
+    }
+  }
+}

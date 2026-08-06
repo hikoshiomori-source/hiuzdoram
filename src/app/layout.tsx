@@ -3,23 +3,23 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "hiuzdoram — Premium Asian Drama Streaming | O'zbek tilida doramalar",
+    default: "hiuzdoram — Birinchi va Sifatli | O'zbek tilida doramalar",
     template: "%s | hiuzdoram",
   },
   description:
-    "Eng sara koreyscha, yaponcha va xitoycha doramalarni o'zbek subtitrlar bilan tomosha qiling. Premium sifatli streaming — hiuzdoram.site platformasida.",
+    "O'zbekistondagi eng birinchi va sifatli dorama platformasi. Eng sara koreyscha, yaponcha va xitoy seriallarini o'zbek tilida, yuqori sifatda (HD) va o'zbek subtitrlarida bepul tomosha qiling.",
   keywords: [
-    "dorama",
-    "kdrama",
-    "koreyscha serial",
-    "yapon anime",
-    "xitoy serial",
-    "o'zbek subtitrlari",
+    "dorama uzbek tilida",
+    "koreys seriallari",
     "dorama ko'rish",
     "hiuzdoram",
-    "koreys dorama uzbek",
+    "hiuzdoram doramalar",
+    "o'zbek subtitrlari",
+    "xitoy seriallari",
+    "yapon anime",
     "dorama online",
-    "streaming",
+    "birinchi raqamli dorama sayti",
+    "sifatli tarjima",
     "korean drama uzbek subtitles",
   ],
   metadataBase: new URL("https://hiuzdoram.site"),
@@ -27,9 +27,9 @@ export const metadata: Metadata = {
     canonical: "https://hiuzdoram.site",
   },
   openGraph: {
-    title: "hiuzdoram — Premium Asian Drama Streaming",
+    title: "hiuzdoram — Birinchi va Sifatli | O'zbek tilida doramalar",
     description:
-      "Eng sara doramalarni o'zbek subtitrlar bilan tomosha qiling. Premium sifat, tez yuklash.",
+      "O'zbekistondagi eng birinchi va sifatli dorama platformasi. Eng sara seriallarni o'zbek tilida va subtitrlarida tomosha qiling.",
     url: "https://hiuzdoram.site",
     siteName: "hiuzdoram",
     locale: "uz_UZ",
@@ -37,9 +37,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "hiuzdoram — Premium Asian Drama Streaming",
+    title: "hiuzdoram — Birinchi va Sifatli",
     description:
-      "Eng sara doramalarni o'zbek subtitrlar bilan tomosha qiling.",
+      "Eng sara doramalarni o'zbek tilida bepul tomosha qiling.",
   },
   robots: {
     index: true,
@@ -63,7 +63,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="uz" className="dark h-full antialiased">
       <head>
         <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
           rel="stylesheet"
         />
         <link
@@ -83,10 +83,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "WebSite",
-              name: "hiuzdoram",
+              name: "hiuzdoram — Birinchi va Sifatli",
               url: "https://hiuzdoram.site",
               description:
-                "Premium Asian doramalar platformasi — o'zbek subtitrlar bilan",
+                "O'zbekistondagi birinchi va eng sifatli dorama platformasi — o'zbek subtitrlar va tarjimalar bilan",
               potentialAction: {
                 "@type": "SearchAction",
                 target: {

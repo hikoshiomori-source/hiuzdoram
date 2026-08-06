@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>hiuzdoram - Neon Premium</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700;800&amp;family=Inter:wght@400;500;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#221e28",
+                        "tertiary": "#ffb0cd",
+                        "slate-text": "#94a3b8",
+                        "on-tertiary-fixed-variant": "#8c0053",
+                        "on-primary-container": "#ede0ff",
+                        "void-navy": "#0b0f19",
+                        "glass-surface": "rgba(15, 23, 42, 0.6)",
+                        "secondary-container": "#0566d9",
+                        "inverse-surface": "#e8dfee",
+                        "on-secondary-fixed-variant": "#004395",
+                        "primary-fixed": "#eaddff",
+                        "surface-container-high": "#2c2833",
+                        "outline-variant": "#4a4455",
+                        "surface-container-highest": "#37333e",
+                        "on-error-container": "#ffdad6",
+                        "primary": "#d2bbff",
+                        "secondary-fixed": "#d8e2ff",
+                        "tertiary-fixed-dim": "#ffb0cd",
+                        "error": "#ffb4ab",
+                        "on-secondary-fixed": "#001a42",
+                        "surface-container-lowest": "#100d16",
+                        "primary-container": "#7c3aed",
+                        "on-error": "#690005",
+                        "primary-fixed-dim": "#d2bbff",
+                        "tertiary-fixed": "#ffd9e4",
+                        "inverse-on-surface": "#332f39",
+                        "outline": "#958da1",
+                        "secondary": "#adc6ff",
+                        "on-primary-fixed-variant": "#5a00c6",
+                        "on-tertiary-container": "#ffdde7",
+                        "glow-purple": "#a855f7",
+                        "on-secondary": "#002e6a",
+                        "background": "#15121b",
+                        "on-tertiary": "#640039",
+                        "on-secondary-container": "#e6ecff",
+                        "on-primary-fixed": "#25005a",
+                        "on-background": "#e8dfee",
+                        "on-surface": "#e8dfee",
+                        "surface-container-low": "#1d1a24",
+                        "surface-dim": "#15121b",
+                        "surface": "#15121b",
+                        "electric-cyan": "#06b6d4",
+                        "on-tertiary-fixed": "#3e0022",
+                        "surface-tint": "#d2bbff",
+                        "tertiary-container": "#bf2076",
+                        "inverse-primary": "#732ee4",
+                        "deep-space": "#06060c",
+                        "secondary-fixed-dim": "#adc6ff",
+                        "on-primary": "#3f008e",
+                        "cyber-pink": "#f43f5e",
+                        "surface-variant": "#37333e",
+                        "error-container": "#93000a",
+                        "surface-bright": "#3c3742",
+                        "on-surface-variant": "#ccc3d8"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "4rem",
+                        "margin-mobile": "1.5rem",
+                        "gutter": "1.5rem",
+                        "container-max": "1440px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["JetBrains Mono"],
+                        "label-md": ["JetBrains Mono"],
+                        "headline-xl": ["Space Grotesk"],
+                        "body-lg": ["Inter"],
+                        "headline-lg-mobile": ["Space Grotesk"],
+                        "headline-lg": ["Space Grotesk"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "label-md": ["14px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "headline-xl": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "headline-lg": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #06060c; /* deep-space */
+            color: #e8dfee; /* on-surface */
+            overflow-x: hidden;
+        }
+        .neon-glow-primary:hover {
+            box-shadow: 0 0 10px rgba(124,58,237,0.5), 0 0 20px rgba(124,58,237,0.3);
+        }
+        .ambient-light-bg {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            z-index: -1;
+            background: 
+                radial-gradient(circle at 15% 50%, rgba(124,58,237,0.05) 0%, transparent 40%),
+                radial-gradient(circle at 85% 30%, rgba(6,182,212,0.05) 0%, transparent 40%);
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md antialiased relative min-h-screen">
+<div class="ambient-light-bg"></div>
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-glass-surface backdrop-blur-md border-b border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)] transition-all duration-300 ease-in-out hidden md:block">
+<div class="flex justify-between items-center px-margin-desktop h-20 w-full max-w-container-max mx-auto">
+<div class="font-headline-lg text-headline-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary drop-shadow-[0_0_10px_rgba(210,187,255,0.5)]">
+                hiuzdoram
+            </div>
+<div class="flex gap-8 items-center">
+<a class="font-label-md text-label-md text-slate-text hover:text-on-surface hover:drop-shadow-[0_0_8px_rgba(210,187,255,0.8)] transition-colors duration-300 uppercase" href="#">Movies</a>
+<a class="font-label-md text-label-md text-slate-text hover:text-on-surface hover:drop-shadow-[0_0_8px_rgba(210,187,255,0.8)] transition-colors duration-300 uppercase" href="#">Series</a>
+<a class="font-label-md text-label-md text-on-surface font-bold border-b-2 border-primary pb-1 uppercase" href="#">Trending</a>
+<a class="font-label-md text-label-md text-slate-text hover:text-on-surface hover:drop-shadow-[0_0_8px_rgba(210,187,255,0.8)] transition-colors duration-300 uppercase" href="#">My List</a>
+</div>
+<div class="flex gap-4 items-center">
+<button class="text-primary hover:text-on-surface hover:drop-shadow-[0_0_8px_rgba(210,187,255,0.8)] transition-all duration-300">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="text-primary hover:text-on-surface hover:drop-shadow-[0_0_8px_rgba(210,187,255,0.8)] transition-all duration-300">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-primary hover:text-on-surface hover:drop-shadow-[0_0_8px_rgba(210,187,255,0.8)] transition-all duration-300">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main>
+<!-- Hero Section -->
+<section class="relative w-full h-[870px] flex items-end pb-24 px-margin-mobile md:px-margin-desktop">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center" data-alt="A highly detailed cinematic shot of a futuristic cyberpunk city skyline at night, glowing neon purple and cyan lights reflecting off rain-slicked glass surfaces, dramatic low-angle perspective, moody and atmospheric tone, high-tech architectural elements, deep space black sky." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCP9NxszC70xEmanWQqTP45ZeMdzI1mqKO2oE3HTgM8xCCG3UpQZHRpnVhdEqRBZjyWZ6mj32G3Z06ovBM-q0z8XgzEDfwrOv6VHZBhIRpv0B-xvtCFFWGCa_eiBTkYN-EVwlZTqFIVvUHeKUhq-zxz59pAMA-DISU0pjN5ieuTTBo9P-M2_53CyehXrzm7KM4VdgSW2WQTMDxt10P-CDdQbpAHuSNs2HP_mkr0yaMgAbkWnMHixRV-Vn86C6cPa92BNxo97cVIqY4s')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-deep-space via-deep-space/50 to-transparent"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-deep-space/80 via-transparent to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-3xl w-full mx-auto md:mx-0 max-w-container-max">
+<h1 class="font-headline-xl text-headline-xl text-on-surface mb-6 drop-shadow-2xl">THE ARCHITECT OF SOULS</h1>
+<p class="font-body-lg text-body-lg text-slate-text mb-10 max-w-2xl">
+                    In a metropolis ruled by algorithms, one rogue coder discovers a hidden reality beneath the neon sprawl. Dive into the mind-bending sci-fi thriller that critics are calling a visual masterpiece.
+                </p>
+<div class="flex flex-wrap gap-4">
+<button class="flex items-center justify-center gap-2 bg-primary-container hover:bg-glow-purple text-on-primary-container px-8 py-4 rounded-full font-label-md text-label-md neon-glow-primary transition-all duration-300">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+                        PLAY NOW
+                    </button>
+<button class="flex items-center justify-center gap-2 bg-glass-surface backdrop-blur-sm border border-white/20 hover:border-glow-purple hover:bg-white/10 text-on-surface px-8 py-4 rounded-full font-label-md text-label-md transition-all duration-300">
+<span class="material-symbols-outlined">add</span>
+                        MY LIST
+                    </button>
+</div>
+</div>
+</section>
+<!-- Trending Now -->
+<section class="py-12 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="flex justify-between items-end mb-8">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface font-bold drop-shadow-[0_0_10px_rgba(210,187,255,0.3)]">Trending Now</h2>
+<a class="font-label-sm text-label-sm text-primary hover:text-glow-purple uppercase tracking-wider flex items-center gap-1 transition-colors" href="#">
+                    View All <span class="material-symbols-outlined text-sm">arrow_forward_ios</span>
+</a>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-gutter">
+<!-- Poster Cards (Generated via loop pattern) -->
+<div class="group relative rounded-xl border border-white/10 overflow-hidden cursor-pointer transition-all duration-300 hover:scale-105 hover:border-glow-purple/50 hover:shadow-[0_0_20px_rgba(168,85,247,0.2)]">
+<div class="aspect-[2/3] w-full bg-surface-container relative">
+<img class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" data-alt="A striking portrait of a cyberpunk detective illuminated by harsh pink and blue neon lights, gritty urban alleyway background, dark shadows, high contrast, moody futuristic aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8irld9gMcSyZnBvrKrxo5SRXr_HrlOKpz1yH6GogWyKjsm8IRZRm-shOlBmdiinR8zRtsP86T-ugcwDQC_YRKoBl1eR8QExjqnjngKnC34w0vAwK7oGDs72Rk5SUn6TFeaiMdFR54xYe3zDMiMr2Z-UOLUyWvlpbAR4dkfVcef04a6qSzhD-TWEK-UfT_kOVvBGcSyXN-Os87ViBWlzHcc5Zgx8WXcJr13rBdbFHYuq2FrWBkm2L8r2aZ1Jxq5Yv55YNTuenfwxEf"/>
+<div class="absolute top-2 right-2 bg-cyber-pink text-white font-label-sm text-label-sm px-2 py-1 rounded-full shadow-lg z-10">9.8</div>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl text-primary drop-shadow-[0_0_10px_rgba(210,187,255,0.8)]" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+</div>
+</div>
+</div>
+<!-- Repeat for other 5 trending cards... simplified for brief effort -->
+<div class="group relative rounded-xl border border-white/10 overflow-hidden cursor-pointer transition-all duration-300 hover:scale-105 hover:border-glow-purple/50 hover:shadow-[0_0_20px_rgba(168,85,247,0.2)]">
+<div class="aspect-[2/3] w-full bg-surface-container relative">
+<img class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" data-alt="Cinematic wide shot of a sleek futuristic motorcycle speeding down a rainy neon-lit highway at night, motion blur, cyan and magenta color palette, dark atmospheric tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-mkAul2wqIqTWUhZWhIO4SRvTVZPV9BZ-qWe7t-jcLCusuUZYH3JvKruRLGmTlXbV4t53t4WJne_P7hFTpfIoI670oEI8oyzSz4jsNQYxj1yHolPz6c4-UL69S8OYyEWqdjunAkMSG-wFatFT01kRzySUFcT7AXTQU2fjN8gyYAv9oowRcv4XRDolDd-WcyhmtDWjkUaTl40226urjXtjZuvaDMEnDDkODR1KLVVgJ0923iWp_5hwNp4aFVSugaDXyYEQrqVPbE0V"/>
+<div class="absolute top-2 right-2 bg-cyber-pink text-white font-label-sm text-label-sm px-2 py-1 rounded-full shadow-lg z-10">9.5</div>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl text-primary drop-shadow-[0_0_10px_rgba(210,187,255,0.8)]" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+</div>
+</div>
+</div>
+<div class="group relative rounded-xl border border-white/10 overflow-hidden cursor-pointer transition-all duration-300 hover:scale-105 hover:border-glow-purple/50 hover:shadow-[0_0_20px_rgba(168,85,247,0.2)] hidden md:block">
+<div class="aspect-[2/3] w-full bg-surface-container relative">
+<img class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" data-alt="A highly detailed close-up of a glowing holographic interface floating in front of a dark silhouetted figure, intricate glowing geometric shapes, electric blue tones, high-tech lab setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2HF-T2wSghVn3O_-OQjF_X_j9-5EuzDx64-JwTfvVxi4RPTEzoUpt-yCODG-ps1Xv04qdJ0tgfHoXIXpUE1R6hhPWAS0Lpv6yJnMpRxs4bEabFECAMrEW6PrmxRDFFs7sXJRzSSmbEBouWQMw2ac1Uc3KBV3MD7e75sAfjZ1w8NDKBv2ZPtfCrcWjozH3WsPl8wkTQ5YwQzjFGp8BqEdUEASSimlZ7w49FF9gXOwxvky4EriL_9Q2cKHQcINUqUAj8zLl-FcrJUMb"/>
+<div class="absolute top-2 right-2 bg-cyber-pink text-white font-label-sm text-label-sm px-2 py-1 rounded-full shadow-lg z-10">9.2</div>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl text-primary drop-shadow-[0_0_10px_rgba(210,187,255,0.8)]" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+</div>
+</div>
+</div>
+<!-- ... -->
+</div>
+</section>
+<!-- New Releases -->
+<section class="py-12 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-20">
+<div class="flex justify-between items-end mb-8">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface font-bold drop-shadow-[0_0_10px_rgba(6,182,212,0.3)]">New Releases</h2>
+<a class="font-label-sm text-label-sm text-electric-cyan hover:text-white uppercase tracking-wider flex items-center gap-1 transition-colors" href="#">
+                    Explore <span class="material-symbols-outlined text-sm">arrow_forward_ios</span>
+</a>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-gutter">
+<!-- Poster Cards (New) -->
+<div class="group relative rounded-xl border border-white/10 overflow-hidden cursor-pointer transition-all duration-300 hover:scale-105 hover:border-electric-cyan/50 hover:shadow-[0_0_20px_rgba(6,182,212,0.2)]">
+<div class="aspect-[2/3] w-full bg-surface-container relative">
+<img class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" data-alt="A mysterious glowing orb hovering over a desolate alien landscape at twilight, dark moody sky, deep purple and cyan lighting, science fiction cinematic style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQWxzsH3KgQ51I6X1DQwv2YOQZnW7_IInHkDiOepSNnpN0_iT-YwEUs1hQ_nRPMNXHIEOTT68Wp12dJrIyOWiURCUoiCxqDz5jixPFmDF8h_HMUKxgt2CHHx84Pj1Oww-mGPbLFWh-onkUN0wnkRoR0Ise_d1UMIn8TObIA90Plp-EfhBA1t_XOGQzppQKODHOt6XAl3theEXCju3UPbC9YVEL0tX9UayZuzaNA-_PKjlNoHCNo-ZSL5e3jvUV1nqXXOYShvwf9Y1D"/>
+<div class="absolute top-2 left-2 bg-cyber-pink text-white font-label-sm text-label-sm px-2 py-1 rounded-sm shadow-lg z-10 tracking-widest uppercase">Yangi</div>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl text-electric-cyan drop-shadow-[0_0_10px_rgba(6,182,212,0.8)]" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+</div>
+</div>
+</div>
+<div class="group relative rounded-xl border border-white/10 overflow-hidden cursor-pointer transition-all duration-300 hover:scale-105 hover:border-electric-cyan/50 hover:shadow-[0_0_20px_rgba(6,182,212,0.2)]">
+<div class="aspect-[2/3] w-full bg-surface-container relative">
+<img class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" data-alt="A sprawling underground cyberpunk market glowing with neon signs, bustling silhouettes, damp reflective floors, deep shadows contrasting with bright vibrant colors." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWPjVvQ7DHGvsHqB-D8FS7I-UotGvVDm1UUEJ2T7-PzQHvcQ4WTFfrpz03dkw0bJ7bT7AQ81jDW4hyXzLupFbAY_-1lIFL4Ud0D8VY0w1B7aENfTYcvdd96mjRKsnw5zOLLPzVGSCfUPciUF9nvvCDLFwLmMTmTtFfJt4dod5dQhjCl3ocduH030wazQj-aDhmE7mfvz0P25iVHpr7J6pjzkbs3SADKe5VkcoIn7cNkgZ0wmoY9n3ozjbS9Jo-slyzRAjrysNm8YNA"/>
+<div class="absolute top-2 left-2 bg-cyber-pink text-white font-label-sm text-label-sm px-2 py-1 rounded-sm shadow-lg z-10 tracking-widest uppercase">Yangi</div>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl text-electric-cyan drop-shadow-[0_0_10px_rgba(6,182,212,0.8)]" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 bg-surface-container-lowest border-t border-outline-variant/30 flex flex-col items-center gap-6 px-margin-desktop max-w-container-max mx-auto text-center">
+<div class="font-headline-lg text-headline-lg font-bold text-primary opacity-100 hover:opacity-80 transition-all duration-300 ease-in-out">
+            hiuzdoram
+        </div>
+<div class="flex flex-wrap justify-center gap-6 font-label-sm text-label-sm">
+<a class="text-slate-text hover:text-secondary transition-colors opacity-100 hover:opacity-80 duration-300 ease-in-out uppercase" href="#">Terms of Service</a>
+<a class="text-slate-text hover:text-secondary transition-colors opacity-100 hover:opacity-80 duration-300 ease-in-out uppercase" href="#">Privacy Policy</a>
+<a class="text-slate-text hover:text-secondary transition-colors opacity-100 hover:opacity-80 duration-300 ease-in-out uppercase" href="#">Help Center</a>
+<a class="text-slate-text hover:text-secondary transition-colors opacity-100 hover:opacity-80 duration-300 ease-in-out uppercase" href="#">Contact Us</a>
+</div>
+<div class="font-body-md text-body-md text-slate-text mt-4">
+            © 2024 hiuzdoram. All rights reserved. Powered by Neon Premium.
+        </div>
+</footer>
+</body></html>

@@ -163,23 +163,23 @@ export default function ContentClient({ initialDramas }: { initialDramas: any[] 
   };
 
   return (
-    <div className="flex flex-col gap-6">
-      <div className="flex items-center justify-between">
+    <div className="flex flex-col gap-6 max-w-[1400px] mx-auto text-white">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 bg-glass-surface p-6 md:p-8 rounded-3xl border border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)]">
         <div>
-          <h1 className="text-2xl md:text-3xl font-extrabold text-on-surface tracking-tight">
-            Kontent Boshqaruvi
+          <h1 className="font-headline-xl text-headline-xl text-white tracking-tight drop-shadow-lg">
+            Content Manager
           </h1>
-          <p className="text-on-surface-variant text-sm mt-1">
-            Doramalarni qo&apos;shing, tahrirlang va boshqaring
+          <p className="font-meta-mono text-meta-mono text-primary mt-2 uppercase tracking-widest">
+            Add, Edit, and Manage Transmissions
           </p>
         </div>
         {!showAddForm && (
           <button
             onClick={() => setShowAddForm(true)}
-            className="flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold bg-gradient-to-r from-primary to-primary-container text-on-primary hover:shadow-[0_0_20px_rgba(210,187,255,0.4)] transition-all hover:scale-[1.02]"
+            className="flex items-center gap-3 px-6 py-3 bg-primary text-white rounded-full font-meta-sm-mono text-meta-sm-mono uppercase tracking-widest hover:shadow-[0_0_20px_rgba(124,58,237,0.6)] hover:bg-glow-purple transition-all duration-300 border border-glow-purple/50 group"
           >
-            <span className="material-symbols-outlined text-lg">add</span>
-            Yangi Dorama
+            <span className="material-symbols-outlined text-xl group-hover:rotate-90 transition-transform duration-300">add</span>
+            New Transmission
           </button>
         )}
       </div>

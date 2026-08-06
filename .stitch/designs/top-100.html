@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Top 100 Rankings - hiuzdoram</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;family=Space+Grotesk:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary-container": "#bf2076",
+                      "on-surface-variant": "#ccc3d8",
+                      "on-secondary": "#002e6a",
+                      "tertiary-fixed-dim": "#ffb0cd",
+                      "primary": "#d2bbff",
+                      "slate-text": "#94a3b8",
+                      "surface-dim": "#15121b",
+                      "on-error-container": "#ffdad6",
+                      "tertiary": "#ffb0cd",
+                      "outline": "#958da1",
+                      "surface-container-lowest": "#100d16",
+                      "inverse-on-surface": "#332f39",
+                      "surface": "#15121b",
+                      "on-error": "#690005",
+                      "void-navy": "#0b0f19",
+                      "secondary-fixed": "#d8e2ff",
+                      "error": "#ffb4ab",
+                      "surface-tint": "#d2bbff",
+                      "on-primary-fixed-variant": "#5a00c6",
+                      "inverse-primary": "#732ee4",
+                      "electric-cyan": "#06b6d4",
+                      "background": "#15121b",
+                      "on-tertiary-fixed": "#3e0022",
+                      "deep-space": "#06060c",
+                      "tertiary-fixed": "#ffd9e4",
+                      "inverse-surface": "#e8dfee",
+                      "on-secondary-fixed-variant": "#004395",
+                      "outline-variant": "#4a4455",
+                      "glow-purple": "#a855f7",
+                      "surface-variant": "#37333e",
+                      "secondary": "#adc6ff",
+                      "on-background": "#e8dfee",
+                      "on-tertiary-fixed-variant": "#8c0053",
+                      "surface-container-highest": "#37333e",
+                      "secondary-fixed-dim": "#adc6ff",
+                      "on-secondary-fixed": "#001a42",
+                      "on-tertiary": "#640039",
+                      "primary-fixed-dim": "#d2bbff",
+                      "primary-container": "#7c3aed",
+                      "surface-container-high": "#2c2833",
+                      "cyber-pink": "#f43f5e",
+                      "on-secondary-container": "#e6ecff",
+                      "secondary-container": "#0566d9",
+                      "on-primary": "#3f008e",
+                      "on-primary-fixed": "#25005a",
+                      "primary-fixed": "#eaddff",
+                      "on-primary-container": "#ede0ff",
+                      "surface-bright": "#3c3742",
+                      "on-tertiary-container": "#ffdde7",
+                      "glass-surface": "rgba(15, 23, 42, 0.6)",
+                      "error-container": "#93000a",
+                      "surface-container": "#221e28",
+                      "on-surface": "#e8dfee",
+                      "surface-container-low": "#1d1a24"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-mobile": "1.5rem",
+                      "margin-desktop": "4rem",
+                      "gutter": "1.5rem",
+                      "container-max": "1440px"
+              },
+              "fontFamily": {
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "headline-xl": [
+                              "Space Grotesk"
+                      ],
+                      "label-sm": [
+                              "JetBrains Mono"
+                      ],
+                      "headline-lg": [
+                              "Space Grotesk"
+                      ],
+                      "headline-lg-mobile": [
+                              "Space Grotesk"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "label-md": [
+                              "JetBrains Mono"
+                      ]
+              },
+              "fontSize": {
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-xl": [
+                              "64px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg": [
+                              "40px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "fontWeight": "500"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        .glow-hover:hover {
+            box-shadow: 0 0 10px rgba(124,58,237,0.5), 0 0 20px rgba(124,58,237,0.3);
+            border-color: rgba(124,58,237,0.8);
+        }
+        
+        .ambient-glow {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80vw;
+            height: 80vh;
+            background: radial-gradient(circle, rgba(124,58,237,0.15) 0%, rgba(6,6,12,0) 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="bg-deep-space text-on-surface font-body-md min-h-screen overflow-x-hidden selection:bg-primary-container selection:text-white">
+<!-- Ambient Background Lighting -->
+<div class="ambient-glow"></div>
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-desktop h-20 bg-glass-surface backdrop-blur-md border-b border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)]">
+<div class="flex items-center gap-8">
+<a class="font-headline-lg text-headline-lg font-bold bg-gradient-to-r from-primary to-electric-cyan bg-clip-text text-transparent drop-shadow-[0_0_8px_rgba(210,187,255,0.8)]" href="#">
+                hiuzdoram
+            </a>
+<div class="hidden md:flex gap-6 items-center">
+<!-- Navigation Links -->
+<a class="text-slate-text font-body-md text-body-md hover:text-glow-purple transition-all duration-300" href="#">Movies</a>
+<a class="text-slate-text font-body-md text-body-md hover:text-glow-purple transition-all duration-300" href="#">Series</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-body-md text-body-md hover:text-glow-purple transition-all duration-300" href="#">Trending</a>
+<a class="text-slate-text font-body-md text-body-md hover:text-glow-purple transition-all duration-300" href="#">My List</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-primary hover:text-glow-purple transition-colors">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<button class="text-primary hover:text-glow-purple transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<div class="w-10 h-10 rounded-full bg-surface-variant border border-outline/30 overflow-hidden cursor-pointer hover:border-primary transition-colors">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="A futuristic cyberpunk avatar portrait of a user. The character has glowing neon accents on their clothing and a slight lens flare effect in a dark atmospheric background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBB22ZVenAUNH9G1zL02ZSo_JxVJmKoMNtg1zUirlEAI7p8NKsoFPjr0LeVHNzkH3sOuPJnjvnh-DudzHAA5_QyYnyzvXCjWBAcaCh2X3g2wXfoN5hthQVjs0X06t9UaUc0J7_LpuEQo2Ewcw3gEYFiIEZt2Iu0Sk0w7GFSdQGvWBXrVjccTr2S_UA1qB1WFbYK4y_L_Fha9ojulFAAI0gqjoS5UOeAjsFcFv3i41zIN4th2sL4TNOjjGDIDZsRJZUzJLWs9Wib_F3"/>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="pt-32 pb-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<!-- Header -->
+<header class="mb-12 text-center md:text-left">
+<h1 class="font-headline-xl text-headline-xl text-primary drop-shadow-[0_0_15px_rgba(210,187,255,0.5)] mb-4">
+                Top 100
+            </h1>
+<p class="font-body-lg text-body-lg text-slate-text max-w-2xl">
+                The most intensely streamed, highly rated, and culturally defining doramas of the cycle. Updated in real-time.
+            </p>
+</header>
+<!-- Rankings List -->
+<div class="flex flex-col gap-6">
+<!-- Rank #1 -->
+<article class="group relative flex flex-col md:flex-row items-center md:items-stretch gap-6 bg-glass-surface backdrop-blur-md rounded-xl p-4 md:p-6 border border-white/10 glow-hover transition-all duration-300">
+<!-- Rank Number -->
+<div class="flex-shrink-0 flex items-center justify-center w-16 md:w-24">
+<span class="font-headline-xl text-headline-xl text-cyber-pink drop-shadow-[0_0_10px_rgba(244,63,94,0.8)]">#1</span>
+</div>
+<!-- Poster -->
+<div class="w-full md:w-48 h-64 md:h-auto rounded-lg overflow-hidden relative border border-white/5 flex-shrink-0">
+<img alt="Dorama Poster" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A vertical cyberpunk-style dorama poster. A lone figure stands in a neon-drenched rainy street in a futuristic Asian metropolis. The scene features glowing pink and blue holographic signs, deep shadows, and cinematic high-contrast lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWRoWc3I0hhAIO-ZPuccOGLwzarNh_syB_Ltf_c-upJKWu5SR8WXXf8oxa1g3C_zUshl2I2otROjE_nZ49L_r9uVzh018EqoohrZ5c8Ztz-l56_8shZSxVetKxH05B0TNnKFl6hwNtQmqp98a1TyCzSXr2f3BpDvCcJbWXRAWZOCTZkRfyBk-qQ06bZeBaaJKjIjvhfDNpwzKA70FbZF1-cPYX_WWdofMPRpstlzle35ow8wVM0pvxzD90iQPGU7RjFfqNvIgIEvLQ"/>
+<!-- High Contrast Badge -->
+<div class="absolute top-2 right-2 bg-cyber-pink text-white px-2 py-1 rounded-full font-label-sm text-label-sm uppercase tracking-wider shadow-[0_0_8px_rgba(244,63,94,0.6)]">
+                        Trending
+                    </div>
+</div>
+<!-- Info -->
+<div class="flex flex-col justify-center flex-grow py-2 md:px-4 w-full">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-2 font-bold tracking-tight">Neon Skyline</h2>
+<p class="font-body-md text-body-md text-slate-text mb-4 line-clamp-2 md:line-clamp-3">
+                        In a sprawling megalopolis where memories are currency, a rogue detective uncovers a conspiracy that goes straight to the top of the atmospheric grid.
+                    </p>
+<div class="flex items-center gap-4 text-slate-text font-label-sm text-label-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-electric-cyan" style="font-size: 16px;">star</span> 9.8/10</span>
+<span>•</span>
+<span>Sci-Fi / Thriller</span>
+<span>•</span>
+<span>24 Episodes</span>
+</div>
+</div>
+<!-- Actions & Sparkline -->
+<div class="flex flex-col items-center justify-between gap-6 md:w-48 flex-shrink-0">
+<!-- Sparkline SVG Placeholder (CSS styling makes it look glowing) -->
+<div class="w-full h-16 w-32 hidden md:block opacity-70 group-hover:opacity-100 transition-opacity">
+<svg class="w-full h-full stroke-electric-cyan fill-none drop-shadow-[0_0_5px_rgba(6,182,212,0.8)]" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 100 30">
+<path d="M0 25 L10 20 L20 22 L30 15 L40 18 L50 10 L60 12 L70 5 L80 8 L90 2 L100 0"></path>
+</svg>
+</div>
+<button class="w-full py-3 px-6 rounded-full bg-glass-surface border border-outline/50 hover:border-glow-purple hover:bg-surface-variant transition-all duration-300 font-label-md text-label-md text-primary flex items-center justify-center gap-2 group/btn">
+<span class="material-symbols-outlined group-hover/btn:text-glow-purple transition-colors" data-icon="play_arrow">play_arrow</span>
+                        Watch Now
+                    </button>
+</div>
+</article>
+<!-- Rank #2 -->
+<article class="group relative flex flex-col md:flex-row items-center md:items-stretch gap-6 bg-glass-surface backdrop-blur-md rounded-xl p-4 md:p-6 border border-white/10 glow-hover transition-all duration-300">
+<!-- Rank Number -->
+<div class="flex-shrink-0 flex items-center justify-center w-16 md:w-24">
+<span class="font-headline-xl text-headline-xl text-cyber-pink drop-shadow-[0_0_10px_rgba(244,63,94,0.5)] opacity-90">#2</span>
+</div>
+<!-- Poster -->
+<div class="w-full md:w-48 h-64 md:h-auto rounded-lg overflow-hidden relative border border-white/5 flex-shrink-0">
+<img alt="Dorama Poster" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A vertical cyberpunk-style dorama poster. A hacker sits in a dark room illuminated by multiple glowing holographic blue screens, intricate code reflecting in their eyes. Dark atmospheric setting with cool cyan lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHR-2O7QAl73bLFEK5m_eqdlG3f8YFdg0-LYWJfH5EJRLBMqTgVTFDb8bS6VgS24UxzdHLpmdPox07CIDgo2wDGQ-Jg2I5VoJSSoOufiu_HBYhuHfgmTstJDP31Gy6YpN4mKV9vQKKZJFvb5wg7w1QXyuk1B862iX4d-JqQDXYqRQCiq1ocK5frHnUPt78kFKjvh57TI3UUxqouysdRAxX92kTIqDr_pgQwnAIIlOJ_y3qiUdB1aRTqxfagpKuimNnD9y2hhSVrGyH"/>
+</div>
+<!-- Info -->
+<div class="flex flex-col justify-center flex-grow py-2 md:px-4 w-full">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-2 font-bold tracking-tight">Zero Day Protocol</h2>
+<p class="font-body-md text-body-md text-slate-text mb-4 line-clamp-2 md:line-clamp-3">
+                        When the central AI system governing New Tokyo is compromised, an elite task force must race against time to prevent total grid collapse.
+                    </p>
+<div class="flex items-center gap-4 text-slate-text font-label-sm text-label-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-electric-cyan" style="font-size: 16px;">star</span> 9.5/10</span>
+<span>•</span>
+<span>Action / Cyberpunk</span>
+<span>•</span>
+<span>16 Episodes</span>
+</div>
+</div>
+<!-- Actions & Sparkline -->
+<div class="flex flex-col items-center justify-between gap-6 md:w-48 flex-shrink-0">
+<div class="w-full h-16 w-32 hidden md:block opacity-50 group-hover:opacity-100 transition-opacity">
+<svg class="w-full h-full stroke-electric-cyan fill-none drop-shadow-[0_0_5px_rgba(6,182,212,0.8)]" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 100 30">
+<path d="M0 20 L15 22 L30 18 L45 10 L60 15 L75 8 L90 5 L100 2"></path>
+</svg>
+</div>
+<button class="w-full py-3 px-6 rounded-full bg-glass-surface border border-outline/50 hover:border-glow-purple hover:bg-surface-variant transition-all duration-300 font-label-md text-label-md text-primary flex items-center justify-center gap-2 group/btn">
+<span class="material-symbols-outlined group-hover/btn:text-glow-purple transition-colors" data-icon="play_arrow">play_arrow</span>
+                        Watch Now
+                    </button>
+</div>
+</article>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-gutter bg-deep-space border-t border-outline-variant">
+<div class="font-headline-lg text-headline-lg text-primary">
+            hiuzdoram
+        </div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="text-slate-text font-label-sm text-label-sm hover:text-cyber-pink hover:underline decoration-cyber-pink transition-colors" href="#">About Us</a>
+<a class="text-slate-text font-label-sm text-label-sm hover:text-cyber-pink hover:underline decoration-cyber-pink transition-colors" href="#">Terms of Service</a>
+<a class="text-slate-text font-label-sm text-label-sm hover:text-cyber-pink hover:underline decoration-cyber-pink transition-colors" href="#">Privacy Policy</a>
+<a class="text-slate-text font-label-sm text-label-sm hover:text-cyber-pink hover:underline decoration-cyber-pink transition-colors" href="#">Contact Support</a>
+</div>
+<div class="font-body-md text-body-md text-slate-text text-center md:text-right">
+            © 2024 hiuzdoram. All rights reserved. Built for the neon city.
+        </div>
+</footer>
+</body></html>

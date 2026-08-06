@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Browse Doramas - hiuzdoram</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts (assuming standard import based on config names) -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;family=Space+Grotesk:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed": "#001a42",
+                        "electric-cyan": "#06b6d4",
+                        "on-primary-fixed-variant": "#5a00c6",
+                        "surface-container-high": "#2c2833",
+                        "surface-container": "#221e28",
+                        "glow-purple": "#a855f7",
+                        "on-secondary-container": "#e6ecff",
+                        "on-secondary": "#002e6a",
+                        "error-container": "#93000a",
+                        "cyber-pink": "#f43f5e",
+                        "on-secondary-fixed-variant": "#004395",
+                        "on-tertiary": "#640039",
+                        "tertiary-fixed": "#ffd9e4",
+                        "primary-fixed-dim": "#d2bbff",
+                        "on-error": "#690005",
+                        "primary-container": "#7c3aed",
+                        "outline-variant": "#4a4455",
+                        "tertiary": "#ffb0cd",
+                        "on-primary": "#3f008e",
+                        "surface-variant": "#37333e",
+                        "surface-tint": "#d2bbff",
+                        "on-surface": "#e8dfee",
+                        "surface-container-lowest": "#100d16",
+                        "void-navy": "#0b0f19",
+                        "glass-surface": "rgba(15, 23, 42, 0.6)",
+                        "on-surface-variant": "#ccc3d8",
+                        "tertiary-fixed-dim": "#ffb0cd",
+                        "inverse-primary": "#732ee4",
+                        "secondary-fixed": "#d8e2ff",
+                        "on-tertiary-fixed": "#3e0022",
+                        "tertiary-container": "#bf2076",
+                        "secondary-fixed-dim": "#adc6ff",
+                        "surface-bright": "#3c3742",
+                        "on-tertiary-container": "#ffdde7",
+                        "inverse-surface": "#e8dfee",
+                        "surface-container-low": "#1d1a24",
+                        "secondary": "#adc6ff",
+                        "surface-dim": "#15121b",
+                        "inverse-on-surface": "#332f39",
+                        "primary-fixed": "#eaddff",
+                        "slate-text": "#94a3b8",
+                        "on-error-container": "#ffdad6",
+                        "error": "#ffb4ab",
+                        "surface-container-highest": "#37333e",
+                        "surface": "#15121b",
+                        "on-tertiary-fixed-variant": "#8c0053",
+                        "on-primary-fixed": "#25005a",
+                        "outline": "#958da1",
+                        "primary": "#d2bbff",
+                        "deep-space": "#06060c",
+                        "secondary-container": "#0566d9",
+                        "background": "#15121b",
+                        "on-primary-container": "#ede0ff",
+                        "on-background": "#e8dfee"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "4rem",
+                        "gutter": "1.5rem",
+                        "container-max": "1440px",
+                        "margin-mobile": "1.5rem"
+                    },
+                    "fontFamily": {
+                        "label-md": ["JetBrains Mono"],
+                        "body-md": ["Inter"],
+                        "headline-xl": ["Space Grotesk"],
+                        "headline-lg-mobile": ["Space Grotesk"],
+                        "body-lg": ["Inter"],
+                        "label-sm": ["JetBrains Mono"],
+                        "headline-lg": ["Space Grotesk"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-xl": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "headline-lg": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-deep-space text-on-surface min-h-screen flex flex-col font-body-md relative overflow-x-hidden selection:bg-glow-purple selection:text-white">
+<!-- Ambient Background Effects -->
+<div class="fixed inset-0 z-0 pointer-events-none">
+<div class="absolute top-[-20%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-glow-purple/5 blur-[120px] mix-blend-screen"></div>
+<div class="absolute bottom-[-20%] right-[-10%] w-[40vw] h-[40vw] rounded-full bg-electric-cyan/5 blur-[100px] mix-blend-screen"></div>
+</div>
+<!-- TopNavBar -->
+<header class="bg-glass-surface fixed top-0 w-full z-50 backdrop-blur-md border-b border-white/10 shadow-[0_0_20px_rgba(124,58,237,0.3)]">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto font-body-md text-body-md text-glow-purple">
+<!-- Logo -->
+<a class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-transparent bg-clip-text bg-gradient-to-r from-glow-purple to-electric-cyan hover:scale-105 active:scale-95 transition-transform duration-300" href="#">
+                hiuzdoram
+            </a>
+<!-- Navigation Links (Desktop) -->
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-slate-text font-medium hover:text-on-surface transition-all duration-300" href="#">Movies</a>
+<!-- Active State -->
+<a class="text-on-surface font-bold border-b-2 border-glow-purple pb-1" href="#">Series</a>
+<a class="text-slate-text font-medium hover:text-on-surface transition-all duration-300" href="#">Trending</a>
+<a class="text-slate-text font-medium hover:text-on-surface transition-all duration-300" href="#">My List</a>
+</nav>
+<!-- Actions -->
+<div class="flex items-center gap-4">
+<!-- Search -->
+<div class="relative hidden sm:block group">
+<input class="bg-white/5 border border-white/10 rounded-full py-1.5 pl-4 pr-10 text-on-surface font-label-md text-label-md focus:outline-none focus:border-electric-cyan focus:shadow-[0_0_15px_rgba(6,182,212,0.3)] transition-all w-48 group-hover:bg-white/10 placeholder-slate-text" placeholder="Search..." type="text"/>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-slate-text pointer-events-none text-[20px]">search</span>
+</div>
+<button class="text-slate-text hover:text-on-surface hover:scale-105 active:scale-95 transition-all duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-slate-text hover:text-on-surface hover:scale-105 active:scale-95 transition-all duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow relative z-10 pt-28 pb-16 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full">
+<!-- Header & Filters -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 gap-6">
+<div>
+<h1 class="font-headline-xl text-headline-lg-mobile md:text-headline-xl text-on-surface mb-2 tracking-tight drop-shadow-[0_2px_10px_rgba(124,58,237,0.2)]">Explore Series</h1>
+<p class="font-body-lg text-body-lg text-slate-text">Discover the latest cyber-infused narratives.</p>
+</div>
+<!-- Filter Pills -->
+<div class="flex flex-nowrap overflow-x-auto pb-2 -mx-margin-mobile px-margin-mobile md:mx-0 md:px-0 md:pb-0 hide-scrollbar gap-3 w-full md:w-auto">
+<button class="whitespace-nowrap px-6 py-2 rounded-full font-label-md text-label-md transition-all duration-300 bg-glow-purple text-white shadow-[0_0_15px_rgba(168,85,247,0.4)] border border-transparent">All</button>
+<button class="whitespace-nowrap px-6 py-2 rounded-full font-label-md text-label-md transition-all duration-300 backdrop-blur-md bg-white/5 border border-white/10 text-slate-text hover:text-white hover:border-glow-purple hover:bg-white/10">Action</button>
+<button class="whitespace-nowrap px-6 py-2 rounded-full font-label-md text-label-md transition-all duration-300 backdrop-blur-md bg-white/5 border border-white/10 text-slate-text hover:text-white hover:border-glow-purple hover:bg-white/10">Romance</button>
+<button class="whitespace-nowrap px-6 py-2 rounded-full font-label-md text-label-md transition-all duration-300 backdrop-blur-md bg-white/5 border border-white/10 text-slate-text hover:text-white hover:border-glow-purple hover:bg-white/10">Sci-Fi</button>
+<button class="whitespace-nowrap px-6 py-2 rounded-full font-label-md text-label-md transition-all duration-300 backdrop-blur-md bg-white/5 border border-white/10 text-slate-text hover:text-white hover:border-glow-purple hover:bg-white/10">Thriller</button>
+<button class="whitespace-nowrap px-6 py-2 rounded-full font-label-md text-label-md transition-all duration-300 backdrop-blur-md bg-white/5 border border-white/10 text-slate-text hover:text-white hover:border-glow-purple hover:bg-white/10">Fantasy</button>
+</div>
+</div>
+<!-- Content Grid -->
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-gutter">
+<!-- Card 1 -->
+<article class="group relative rounded-[1rem] overflow-hidden bg-surface-container aspect-[2/3] border border-white/10 transition-all duration-500 hover:border-glow-purple hover:shadow-[0_0_25px_rgba(168,85,247,0.4)] cursor-pointer">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A highly detailed cinematic poster for a cyberpunk action series. The scene features a gritty, neon-lit alleyway bathed in intense cyan and magenta light. A lone figure stands in the rain, silhouettes sharp against the glowing city backdrop. The aesthetic is high-contrast, premium, and dynamic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCyrwZxCZ-XXsRMg6ntnV3HP82EalyyW6vyHAj7qMoBCOIKvJ0JG3YtnAa2_aSoj2TgHV20kQghnbtwWm0stYhw8puBr5OhPl1WmGQGpbP9jFXXTKiQx0uVRr9Ye9O_G7BrV5SS7VZezBOGdpA51zghTmoT4D91MPrkeZaLNS_WPyIwyyMqkIq4Pu3LHn6GOy9abbVIm4-kn033ZifR1qCXNKeqoSw8DD_YAkXJgCwVx01mmuBxGNs-WaxcBqA0UmMEfGQ6byuKlaU"/>
+<div class="absolute inset-0 bg-gradient-to-t from-deep-space via-deep-space/40 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-300"></div>
+<!-- Badge -->
+<div class="absolute top-3 right-3 bg-cyber-pink text-white font-label-sm text-label-sm px-2.5 py-1 rounded-full shadow-[0_0_12px_rgba(244,63,94,0.6)] backdrop-blur-sm">
+                    9.8
+                </div>
+<!-- Play Overlay -->
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
+<div class="w-16 h-16 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center shadow-[0_0_20px_rgba(255,255,255,0.2)] group-hover:border-electric-cyan group-hover:shadow-[0_0_30px_rgba(6,182,212,0.5)] transition-all">
+<span class="material-symbols-outlined text-white text-3xl ml-1" data-icon="play_arrow" data-weight="fill" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+<!-- Info -->
+<div class="absolute bottom-0 w-full p-4 transform translate-y-1 group-hover:translate-y-0 transition-transform duration-300 z-10">
+<h3 class="font-body-lg text-body-lg font-bold text-on-surface truncate drop-shadow-md">Neon Requiem</h3>
+<div class="flex items-center gap-2 mt-1">
+<span class="font-label-sm text-label-sm text-electric-cyan">Action</span>
+<span class="w-1 h-1 rounded-full bg-slate-text/50"></span>
+<span class="font-label-sm text-label-sm text-slate-text">2024</span>
+</div>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="group relative rounded-[1rem] overflow-hidden bg-surface-container aspect-[2/3] border border-white/10 transition-all duration-500 hover:border-electric-cyan hover:shadow-[0_0_25px_rgba(6,182,212,0.4)] cursor-pointer">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A striking promotional poster for a sci-fi thriller dorama. The image centers on a glowing, futuristic neural interface headset resting on a dark reflective surface. The lighting is dominated by electric blue and deep void navy, creating a suspenseful, technologically advanced atmosphere with a pristine glassmorphism feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJvuKTTd5Ke5YFnlte53X4qB3MT0OsvVzRa4C9VC4_yBV6Zxvp43jjxCdA24YETqGZrefJF6J6GuyW0AG9b5UCP5n3CsISwfhbhYgX1l5vgd30xx4auP3EbNIV1PWnz4NK0HRNAbB9sBFBuWNZ7pCr3YmiBhjyOJ023XkJQ7LjDuGmtLUqmzwsyJIYVM8Ld9Dx4bCa2U8tRvqcf84XAYZunaA-BUWNi_KEDacbbkjF9mru1Hjk4HxRWThZMgCG1yOutjCTMJ9YMz_E"/>
+<div class="absolute inset-0 bg-gradient-to-t from-deep-space via-deep-space/40 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-300"></div>
+<div class="absolute top-3 right-3 bg-cyber-pink text-white font-label-sm text-label-sm px-2.5 py-1 rounded-full shadow-[0_0_12px_rgba(244,63,94,0.6)] backdrop-blur-sm">
+                    9.5
+                </div>
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
+<div class="w-16 h-16 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center shadow-[0_0_20px_rgba(255,255,255,0.2)] group-hover:border-glow-purple group-hover:shadow-[0_0_30px_rgba(168,85,247,0.5)] transition-all">
+<span class="material-symbols-outlined text-white text-3xl ml-1" data-icon="play_arrow" data-weight="fill" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+<div class="absolute bottom-0 w-full p-4 transform translate-y-1 group-hover:translate-y-0 transition-transform duration-300 z-10">
+<h3 class="font-body-lg text-body-lg font-bold text-on-surface truncate drop-shadow-md">Synapse Drift</h3>
+<div class="flex items-center gap-2 mt-1">
+<span class="font-label-sm text-label-sm text-glow-purple">Sci-Fi</span>
+<span class="w-1 h-1 rounded-full bg-slate-text/50"></span>
+<span class="font-label-sm text-label-sm text-slate-text">2023</span>
+</div>
+</div>
+</article>
+<!-- Card 3 -->
+<article class="group relative rounded-[1rem] overflow-hidden bg-surface-container aspect-[2/3] border border-white/10 transition-all duration-500 hover:border-glow-purple hover:shadow-[0_0_25px_rgba(168,85,247,0.4)] cursor-pointer">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A visually arresting poster for a high-tech romance series. Two elegantly dressed figures gaze at a sprawling, luminous cyberpunk skyline at night. The color palette leans heavily into deep purples, soft pinks, and midnight blues, creating an intimate yet vast atmospheric mood with glowing neon highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCogkpRs-gPsCXa5hug1gsLj27deYXorrG_-a-1udGh5zg_Rxxd1YllFTaoF02TCXBhEKFDp-BZ0XB1h2MZELWFa1BmGPAx2_cGgUlsz6-CZcI3TFGynhmh-xrx3aaovMw1289kkGtHKIWLSOwSQgPecKtHNgvxu2yILijGNuRlzHfzKSjBLm8g5gbc96DqzbtXssPs1IMUHrm-STPSZFvwUSJ96QUbRSTV50i_l1Ze8R-vODviwzqJRoZ9JMNNAOcasz87q_R83yOh"/>
+<div class="absolute inset-0 bg-gradient-to-t from-deep-space via-deep-space/40 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-300"></div>
+<div class="absolute top-3 right-3 bg-cyber-pink text-white font-label-sm text-label-sm px-2.5 py-1 rounded-full shadow-[0_0_12px_rgba(244,63,94,0.6)] backdrop-blur-sm">
+                    9.2
+                </div>
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
+<div class="w-16 h-16 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center shadow-[0_0_20px_rgba(255,255,255,0.2)] group-hover:border-electric-cyan group-hover:shadow-[0_0_30px_rgba(6,182,212,0.5)] transition-all">
+<span class="material-symbols-outlined text-white text-3xl ml-1" data-icon="play_arrow" data-weight="fill" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+<div class="absolute bottom-0 w-full p-4 transform translate-y-1 group-hover:translate-y-0 transition-transform duration-300 z-10">
+<h3 class="font-body-lg text-body-lg font-bold text-on-surface truncate drop-shadow-md">Starlight Protocol</h3>
+<div class="flex items-center gap-2 mt-1">
+<span class="font-label-sm text-label-sm text-electric-cyan">Romance</span>
+<span class="w-1 h-1 rounded-full bg-slate-text/50"></span>
+<span class="font-label-sm text-label-sm text-slate-text">2024</span>
+</div>
+</div>
+</article>
+<!-- Card 4 -->
+<article class="group relative rounded-[1rem] overflow-hidden bg-surface-container aspect-[2/3] border border-white/10 transition-all duration-500 hover:border-electric-cyan hover:shadow-[0_0_25px_rgba(6,182,212,0.4)] cursor-pointer">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A dark and moody poster for a futuristic thriller dorama. A shattered glass pane reflects a chaotic neon-drenched city street. The dominant colors are void navy and harsh cyan, with extreme high-contrast lighting emphasizing danger and technological mystery." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQs8vA9ymgvKTUDgk6MuM7kMpxiT6AWQfcoOS5zyASiABMP1-yrasN7jjKx9qfyb4nXuuhrjy8e4YV5QZFCl6RmrJ4U3eIRUKrW8tldcGYwqdEpkVOVLzTbuMwpckktbDFy3ZjggbmkoStldptw_ynNTGWX2kg4qalRg2-QixexDQVhg6jtm-6GsYxbYys3aNGAqELrDakgOhVu1zFj0cny9O9Z-Jj3iVYHAJY9CiQGpEcQTn2XTG3zZFuUwen6j7hYc2YLST73vQi"/>
+<div class="absolute inset-0 bg-gradient-to-t from-deep-space via-deep-space/40 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-300"></div>
+<div class="absolute top-3 right-3 bg-cyber-pink text-white font-label-sm text-label-sm px-2.5 py-1 rounded-full shadow-[0_0_12px_rgba(244,63,94,0.6)] backdrop-blur-sm">
+                    8.9
+                </div>
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
+<div class="w-16 h-16 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center shadow-[0_0_20px_rgba(255,255,255,0.2)] group-hover:border-glow-purple group-hover:shadow-[0_0_30px_rgba(168,85,247,0.5)] transition-all">
+<span class="material-symbols-outlined text-white text-3xl ml-1" data-icon="play_arrow" data-weight="fill" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+<div class="absolute bottom-0 w-full p-4 transform translate-y-1 group-hover:translate-y-0 transition-transform duration-300 z-10">
+<h3 class="font-body-lg text-body-lg font-bold text-on-surface truncate drop-shadow-md">Fragmented Reality</h3>
+<div class="flex items-center gap-2 mt-1">
+<span class="font-label-sm text-label-sm text-glow-purple">Thriller</span>
+<span class="w-1 h-1 rounded-full bg-slate-text/50"></span>
+<span class="font-label-sm text-label-sm text-slate-text">2023</span>
+</div>
+</div>
+</article>
+<!-- Card 5 (Hidden on smaller screens to maintain grid balance, visible lg+) -->
+<article class="group relative rounded-[1rem] overflow-hidden bg-surface-container aspect-[2/3] border border-white/10 transition-all duration-500 hover:border-glow-purple hover:shadow-[0_0_25px_rgba(168,85,247,0.4)] cursor-pointer hidden sm:block">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="An ethereal fantasy dorama poster set in a digitized ancient realm. Glowing runes float above dark, craggy landscapes illuminated by an artificial pink moon. The style is a blend of traditional eastern aesthetics and high-tech cyberpunk elements, featuring rich, glowing magentas and deep shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCq2HvCIL1izR6WZbSTofcudbg5Muef6KoQmFzCgw5nBwSjClfCWEDz6HejuyEe1s_Yl--FreB2Nzm04eohbhUHyWQ2pouT1nPi3oQ-fklLdToTAjarlrXxCbvf9uPhTSbyUoiON9r_-08WMCOq7-6sErHEtxMhSDeFISLc_xzE9ZyV8qIWZydCoWTQbXbaDOn4jCl6D9_KAw6AqqoM9fumgBQ-ibLZPaO7ROk84mkZ81wvh02bWuk5O46wq6S5B7fhMJIOAepDIhWZ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-deep-space via-deep-space/40 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-300"></div>
+<div class="absolute top-3 right-3 bg-cyber-pink text-white font-label-sm text-label-sm px-2.5 py-1 rounded-full shadow-[0_0_12px_rgba(244,63,94,0.6)] backdrop-blur-sm">
+                    9.6
+                </div>
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
+<div class="w-16 h-16 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center shadow-[0_0_20px_rgba(255,255,255,0.2)] group-hover:border-electric-cyan group-hover:shadow-[0_0_30px_rgba(6,182,212,0.5)] transition-all">
+<span class="material-symbols-outlined text-white text-3xl ml-1" data-icon="play_arrow" data-weight="fill" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+<div class="absolute bottom-0 w-full p-4 transform translate-y-1 group-hover:translate-y-0 transition-transform duration-300 z-10">
+<h3 class="font-body-lg text-body-lg font-bold text-on-surface truncate drop-shadow-md">Cyber Dynasty</h3>
+<div class="flex items-center gap-2 mt-1">
+<span class="font-label-sm text-label-sm text-electric-cyan">Fantasy</span>
+<span class="w-1 h-1 rounded-full bg-slate-text/50"></span>
+<span class="font-label-sm text-label-sm text-slate-text">2024</span>
+</div>
+</div>
+</article>
+</div>
+<!-- Pagination -->
+<div class="flex justify-center items-center mt-12 gap-2 font-label-md text-label-md">
+<button class="w-10 h-10 rounded-full flex items-center justify-center bg-white/5 border border-white/10 text-slate-text hover:text-white hover:border-glow-purple transition-colors duration-300">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+</button>
+<button class="w-10 h-10 rounded-full flex items-center justify-center bg-glow-purple text-white shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-colors duration-300">1</button>
+<button class="w-10 h-10 rounded-full flex items-center justify-center bg-white/5 border border-white/10 text-slate-text hover:text-white hover:border-glow-purple hover:bg-white/10 transition-colors duration-300">2</button>
+<button class="w-10 h-10 rounded-full flex items-center justify-center bg-white/5 border border-white/10 text-slate-text hover:text-white hover:border-glow-purple hover:bg-white/10 transition-colors duration-300">3</button>
+<span class="text-slate-text px-2">...</span>
+<button class="w-10 h-10 rounded-full flex items-center justify-center bg-white/5 border border-white/10 text-slate-text hover:text-white hover:border-glow-purple hover:bg-white/10 transition-colors duration-300">12</button>
+<button class="w-10 h-10 rounded-full flex items-center justify-center bg-white/5 border border-white/10 text-slate-text hover:text-white hover:border-glow-purple transition-colors duration-300">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-dim w-full mt-auto backdrop-blur-md border-t border-white/5">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop py-8 gap-gutter max-w-container-max mx-auto text-glow-purple">
+<div class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">
+                hiuzdoram
+            </div>
+<nav class="flex flex-wrap justify-center gap-6 font-label-sm text-label-sm">
+<a class="text-slate-text hover:text-cyber-pink transition-colors" href="#">Privacy Policy</a>
+<a class="text-slate-text hover:text-cyber-pink transition-colors" href="#">Terms of Service</a>
+<a class="text-slate-text hover:text-cyber-pink transition-colors" href="#">Help Center</a>
+<a class="text-slate-text hover:text-cyber-pink transition-colors" href="#">Contact Us</a>
+</nav>
+<div class="font-label-sm text-label-sm text-slate-text">
+                © 2024 hiuzdoram. All rights reserved.
+            </div>
+</div>
+</footer>
+</body></html>

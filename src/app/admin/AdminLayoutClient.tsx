@@ -13,20 +13,20 @@ export default function AdminLayoutClient({ children }: { children: React.ReactN
   const pathname = usePathname();
 
   return (
-    <div className="flex min-h-screen bg-background">
+    <div className="flex min-h-screen bg-[#09090b]">
       {/* Sidebar */}
-      <aside className="w-64 bg-surface-container-lowest border-r border-border-glass flex-shrink-0 hidden md:flex flex-col">
+      <aside className="w-64 bg-[#18181b] border-r border-[#27272a] flex-shrink-0 hidden md:flex flex-col">
         {/* Logo */}
-        <div className="h-16 flex items-center px-6 border-b border-border-glass">
+        <div className="h-16 flex items-center px-6 border-b border-[#27272a]">
           <Link href="/admin" className="flex items-center gap-2">
             <span
-              className="material-symbols-outlined text-2xl text-primary"
+              className="material-symbols-outlined text-2xl text-[#e11d48]"
               style={{ fontVariationSettings: "'FILL' 1" }}
             >
               admin_panel_settings
             </span>
-            <span className="text-lg font-bold text-on-surface tracking-tight">
-              HiUzDoram <span className="text-primary">Admin</span>
+            <span className="text-lg font-bold text-white tracking-tight">
+              HiUzDoram <span className="text-[#e11d48]">Admin</span>
             </span>
           </Link>
         </div>
@@ -39,10 +39,10 @@ export default function AdminLayoutClient({ children }: { children: React.ReactN
               <Link
                 key={link.href}
                 href={link.href}
-                className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold transition-all ${
+                className={`flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-semibold transition-all ${
                   isActive
-                    ? "bg-primary/10 text-primary border border-primary/20"
-                    : "text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high"
+                    ? "bg-[#e11d48]/10 text-[#e11d48] border border-[#e11d48]/20"
+                    : "text-[#a1a1aa] hover:text-white hover:bg-[#27272a]"
                 }`}
               >
                 <span className="material-symbols-outlined text-xl">{link.icon}</span>
@@ -53,10 +53,10 @@ export default function AdminLayoutClient({ children }: { children: React.ReactN
         </nav>
 
         {/* Footer */}
-        <div className="p-4 border-t border-border-glass">
+        <div className="p-4 border-t border-[#27272a]">
           <Link
             href="/"
-            className="flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all"
+            className="flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-semibold text-[#a1a1aa] hover:text-white hover:bg-[#27272a] transition-all"
           >
             <span className="material-symbols-outlined text-xl">arrow_back</span>
             Saytga qaytish
@@ -67,10 +67,10 @@ export default function AdminLayoutClient({ children }: { children: React.ReactN
       {/* Main Content */}
       <div className="flex-1 flex flex-col min-w-0">
         {/* Top Bar */}
-        <header className="h-16 bg-surface-container-lowest/80 backdrop-blur-md border-b border-border-glass flex items-center justify-between px-6 sticky top-0 z-40">
+        <header className="h-16 bg-[#18181b]/90 backdrop-blur-md border-b border-[#27272a] flex items-center justify-between px-6 sticky top-0 z-40">
           {/* Mobile menu */}
           <div className="md:hidden flex items-center gap-3">
-            <Link href="/admin" className="text-lg font-bold text-primary">
+            <Link href="/admin" className="text-lg font-bold text-[#e11d48]">
               Admin
             </Link>
           </div>
@@ -84,7 +84,7 @@ export default function AdminLayoutClient({ children }: { children: React.ReactN
                   key={link.href}
                   href={link.href}
                   className={`p-2 rounded-lg transition-colors ${
-                    isActive ? "text-primary bg-primary/10" : "text-on-surface-variant"
+                    isActive ? "text-[#e11d48] bg-[#e11d48]/10" : "text-[#a1a1aa]"
                   }`}
                 >
                   <span className="material-symbols-outlined text-xl">{link.icon}</span>
@@ -96,11 +96,11 @@ export default function AdminLayoutClient({ children }: { children: React.ReactN
           {/* Search */}
           <div className="hidden md:flex items-center gap-3 flex-1">
             <div className="relative max-w-sm">
-              <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-lg pointer-events-none">
+              <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[#a1a1aa] text-lg pointer-events-none">
                 search
               </span>
               <input
-                className="w-full bg-surface-container-low border border-transparent rounded-xl py-2 pl-10 pr-4 text-sm text-on-surface placeholder:text-outline outline-none focus:border-primary/50 transition-all"
+                className="w-full bg-[#09090b] border border-[#27272a] rounded-lg py-2 pl-10 pr-4 text-sm text-white placeholder:text-[#a1a1aa] outline-none focus:border-[#e11d48] transition-all"
                 placeholder="Qidirish..."
                 type="text"
               />
@@ -109,11 +109,11 @@ export default function AdminLayoutClient({ children }: { children: React.ReactN
 
           {/* Admin User */}
           <div className="flex items-center gap-3">
-            <button className="relative p-2 rounded-full hover:bg-surface-variant transition-colors text-on-surface-variant">
+            <button className="relative p-2 rounded-full hover:bg-[#27272a] transition-colors text-[#a1a1aa]">
               <span className="material-symbols-outlined text-xl">notifications</span>
-              <span className="absolute top-1 right-1 w-2 h-2 bg-error rounded-full" />
+              <span className="absolute top-1 right-1 w-2 h-2 bg-[#e11d48] rounded-full" />
             </button>
-            <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-primary text-sm font-bold">
+            <div className="w-8 h-8 rounded-full bg-[#e11d48]/20 flex items-center justify-center text-[#e11d48] text-sm font-bold">
               A
             </div>
           </div>
