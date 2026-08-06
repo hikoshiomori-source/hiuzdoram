@@ -5,7 +5,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import MoverPlayer from "@/components/MoverPlayer";
 import { comments, IMAGES } from "@/lib/data"; // we'll keep comments mock for now since it's not strictly requested
-import { createClient } from "@/lib/supabase/server";
+import { createClient } from "@supabase/supabase-js";
+export const revalidate = 60; // ISR cache
 
 interface PageProps {
   params: Promise<{ id: string }>;
@@ -19,7 +20,10 @@ export default async function WatchPage({ params, searchParams }: PageProps) {
   const dramaId = resolvedParams.id;
   const currentEpId = typeof resolvedSearchParams.ep === 'string' ? resolvedSearchParams.ep : null;
 
-  const supabase = await createClient();
+  const supabase = createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+  );
 
   // Fetch drama and its episodes
   const { data: dbDrama, error } = await supabase

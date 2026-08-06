@@ -4,12 +4,15 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import DoramaCard from "@/components/DoramaCard";
 import { IMAGES } from "@/lib/data";
-import { createClient } from "@/lib/supabase/server";
+import { createClient } from "@supabase/supabase-js";
 
-export const dynamic = 'force-dynamic';
+export const revalidate = 60; // 60 soniyada bir marta yangilanadi (ISR)
 
 export default async function HomePage() {
-  const supabase = await createClient();
+  const supabase = createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+  );
 
   // Fetch dramas with episodes count
   const { data: dbDramas, error } = await supabase

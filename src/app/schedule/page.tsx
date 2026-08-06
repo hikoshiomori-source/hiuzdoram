@@ -2,9 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { createClient } from "@/lib/supabase/server";
+import { createClient } from "@supabase/supabase-js";
 
-export const dynamic = 'force-dynamic';
+export const revalidate = 60; // 60 soniyada bir marta yangilanadi (ISR)
 
 const weekDays = [
   { day: "Dushanba", short: "Du" },
@@ -17,7 +17,10 @@ const weekDays = [
 ];
 
 export default async function SchedulePage() {
-  const supabase = await createClient();
+  const supabase = createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+  );
   
   // Vercel server is UTC, so we get approx day (0 = Sun, 1 = Mon)
   const todayIndex = new Date().getDay();
