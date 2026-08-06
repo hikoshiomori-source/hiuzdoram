@@ -2,8 +2,24 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ClientBrowse from "./ClientBrowse";
 import { createClient } from "@supabase/supabase-js";
+import type { Metadata } from "next";
 
-export const revalidate = 60; // ISR cache
+export const metadata: Metadata = {
+  title: "Doramalar — Barcha koreyscha, yaponcha, xitoycha seriallar | hiuzdoram",
+  description:
+    "Eng sara koreyscha, yaponcha va xitoycha doramalarni kashf eting. Janr, mamlakat va holat bo'yicha filtrlash — hiuzdoram platformasida.",
+  alternates: {
+    canonical: "https://hiuzdoram.site/browse",
+  },
+  openGraph: {
+    title: "Doramalar — hiuzdoram",
+    description: "Barcha doramalarni kashf eting va tomosha qiling.",
+    type: "website",
+    siteName: "hiuzdoram",
+  },
+};
+
+export const revalidate = 60;
 
 export default async function BrowsePage() {
   const supabase = createClient(

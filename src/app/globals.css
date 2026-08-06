@@ -420,3 +420,58 @@
 .transition-premium {
   transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+/* ═══════════════════════════════════════ */
+/* ── Skeleton Shimmer ── */
+/* ═══════════════════════════════════════ */
+@keyframes skeleton-wave {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.skeleton-shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--color-surface-container) 0%,
+    var(--color-surface-container-high) 20%,
+    var(--color-surface-bright) 40%,
+    var(--color-surface-container-high) 60%,
+    var(--color-surface-container) 100%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-wave 1.8s ease-in-out infinite;
+  will-change: background-position;
+}
+
+/* ═══════════════════════════════════════ */
+/* ── GPU Acceleration ── */
+/* ═══════════════════════════════════════ */
+.animate-card-entrance,
+.animate-fade-in-up,
+.animate-slide-in-left,
+.animate-slide-in-right,
+.animate-scale-in,
+.animate-float,
+.animate-orb-float {
+  will-change: transform, opacity;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+/* Cinematic card hover — hardware-accelerated */
+.card-cinematic {
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform, box-shadow;
+}
+.card-cinematic:hover {
+  transform: translateY(-8px) scale(1.03) translateZ(0);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.4),
+    0 0 30px rgba(115, 46, 228, 0.15);
+}

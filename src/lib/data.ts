@@ -34,7 +34,7 @@ export const dramas: Drama[] = [
     status: "Ongoing",
     synopsis:
       "Pragmatik detektiv qotillik qurbonlarining so'nggi xotiralarini ko'ra olishini bilgach, shaharning qadimiy sirlarini saqlaydigan yolg'iz tarixchi bilan birgalikda imkonsiz jinoyatlar silsilasini hal qilishi kerak.",
-    views: "2.4M",
+
     cast: [
       { id: "c1", name: "Lee Jun-ho", role: "Detective Kang", avatar: IMAGES.castActor1 },
       { id: "c2", name: "Kim Yoo-jung", role: "Ha-yeon", avatar: IMAGES.castActor2 },
@@ -65,7 +65,7 @@ export const dramas: Drama[] = [
     status: "Ongoing",
     synopsis:
       "Iste'dodli ayol jarrohi kasalxona siyosati va shaxsiy dramalari orasida muvozanat saqlashga urinadi.",
-    views: "1.8M",
+
     cast: [
       { id: "c4", name: "Song Hye-kyo", role: "Dr. Yoon", avatar: IMAGES.castActor2 },
     ],
@@ -94,7 +94,7 @@ export const dramas: Drama[] = [
     status: "Ongoing",
     synopsis:
       "Yosh malika o'z saltanatini himoya qilish uchun qilichini ko'tarishga majbur bo'ladi.",
-    views: "3.1M",
+
     cast: [
       { id: "c5", name: "Jun Ji-hyun", role: "Queen Seo-yeon", avatar: IMAGES.castActor2 },
     ],
@@ -117,7 +117,7 @@ export const dramas: Drama[] = [
     status: "Completed",
     synopsis:
       "Ikki o'smirning dengiz bo'yidagi bir yozlik unutilmas hikoyasi.",
-    views: "1.2M",
+
     cast: [
       { id: "c6", name: "Hamabe Minami", role: "Yuki", avatar: IMAGES.castActor2 },
     ],
@@ -140,7 +140,7 @@ export const dramas: Drama[] = [
     status: "Ongoing",
     synopsis:
       "Kiberpank shahrida xaker holografik ma'lumotlar ichida yashirin haqiqatni qidiradi.",
-    views: "900K",
+
     cast: [
       { id: "c7", name: "Wang Yibo", role: "Zero", avatar: IMAGES.castActor1 },
     ],
@@ -163,7 +163,7 @@ export const dramas: Drama[] = [
     status: "Completed",
     synopsis:
       "Qadimiy sehrgar olamida ruhlar almashish san'ati butun saltanatni larzaga keltiradi.",
-    views: "5.2M",
+
     cast: [
       { id: "c8", name: "Lee Jae-wook", role: "Jang Uk", avatar: IMAGES.castActor1 },
       { id: "c9", name: "Jung So-min", role: "Mu-deok", avatar: IMAGES.castActor2 },

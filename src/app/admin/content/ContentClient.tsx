@@ -354,7 +354,7 @@ export default function ContentClient({ initialDramas }: { initialDramas: any[] 
                 <th className="text-left text-xs text-text-secondary font-semibold uppercase tracking-wider px-6 py-3">Nomi</th>
                 <th className="text-left text-xs text-text-secondary font-semibold uppercase tracking-wider px-6 py-3">Holati</th>
                 <th className="text-left text-xs text-text-secondary font-semibold uppercase tracking-wider px-6 py-3">Qismlar</th>
-                <th className="text-left text-xs text-text-secondary font-semibold uppercase tracking-wider px-6 py-3">Ko&apos;rishlar</th>
+
                 <th className="text-left text-xs text-text-secondary font-semibold uppercase tracking-wider px-6 py-3">Amallar</th>
               </tr>
             </thead>
@@ -384,7 +384,7 @@ export default function ContentClient({ initialDramas }: { initialDramas: any[] 
                       </span>
                     </td>
                     <td className="px-6 py-4 text-sm text-on-surface-variant">{drama.total_episodes || "?"}</td>
-                    <td className="px-6 py-4 text-sm text-on-surface-variant">{drama.views}</td>
+
                     <td className="px-6 py-4">
                       <div className="flex items-center gap-1">
                         <button onClick={() => handleEdit(drama)} className="p-2 rounded-lg text-on-surface-variant hover:text-primary hover:bg-primary/10 transition-colors">

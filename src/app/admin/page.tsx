@@ -62,7 +62,7 @@ export default function AdminDashboard() {
                 <th className="text-left text-xs text-text-secondary font-semibold uppercase tracking-wider px-6 py-3">Nomi</th>
                 <th className="text-left text-xs text-text-secondary font-semibold uppercase tracking-wider px-6 py-3">Holati</th>
                 <th className="text-left text-xs text-text-secondary font-semibold uppercase tracking-wider px-6 py-3">Qismlar</th>
-                <th className="text-left text-xs text-text-secondary font-semibold uppercase tracking-wider px-6 py-3">Ko&apos;rishlar</th>
+
                 <th className="text-left text-xs text-text-secondary font-semibold uppercase tracking-wider px-6 py-3">Reyting</th>
               </tr>
             </thead>
@@ -86,7 +86,7 @@ export default function AdminDashboard() {
                     </span>
                   </td>
                   <td className="px-6 py-4 text-sm text-on-surface-variant">{drama.episodes}</td>
-                  <td className="px-6 py-4 text-sm text-on-surface-variant">{drama.views}</td>
+
                   <td className="px-6 py-4">
                     <div className="flex items-center gap-1 text-brand-rose">
                       <span

@@ -42,7 +42,7 @@ export async function GET() {
           status: drama.status,
           poster_url: drama.poster,
           backdrop_url: drama.backdrop,
-          views: drama.views,
+
           rating: drama.rating,
         });
 

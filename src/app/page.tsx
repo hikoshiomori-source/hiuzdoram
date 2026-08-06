@@ -59,7 +59,6 @@ export default async function HomePage() {
     totalEpisodes: d.total_episodes,
     status: d.status,
     synopsis: d.synopsis,
-    views: d.views,
     episodes: d.episodes || [],
     releaseDays: d.release_days,
     releaseTime: d.release_time,

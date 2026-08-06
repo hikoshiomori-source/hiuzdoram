@@ -15,16 +15,16 @@ export default function DoramaCard({ drama, index }: DoramaCardProps) {
       className="flex flex-col gap-3 group cursor-pointer relative animate-card-entrance"
       style={{ animationDelay: index ? `${index * 60}ms` : "0ms" }}
     >
-      {/* Poster */}
-      <div className="relative w-full aspect-[2/3] rounded-xl overflow-hidden shadow-lg group-hover:shadow-[0_0_25px_rgba(115,46,228,0.4)] transition-premium group-hover:-translate-y-2 group-hover:scale-[1.02]">
+      {/* Poster — Cinematic hover */}
+      <div className="relative w-full aspect-[2/3] rounded-xl overflow-hidden shadow-lg card-cinematic">
         <Image
           src={drama.poster || "https://placehold.co/400x600/1a1a24/732ee4?text=No+Poster"}
-          alt={drama.title || "Dorama"}
+          alt={`${drama.title} — ${drama.genres.join(", ")} dorama poster`}
           fill
           className="object-cover transition-transform duration-700 group-hover:scale-110"
           sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
 
         {/* Badges */}
         <div className="absolute top-2 left-2 right-2 flex justify-between items-start">
@@ -51,14 +51,6 @@ export default function DoramaCard({ drama, index }: DoramaCardProps) {
               star
             </span>
             {drama.rating}
-          </span>
-        </div>
-
-        {/* View Count Badge */}
-        <div className="absolute bottom-2 left-2">
-          <span className="flex items-center gap-1 px-2 py-0.5 rounded-md bg-black/60 backdrop-blur-sm text-white text-xs font-medium">
-            <span className="material-symbols-outlined text-xs">visibility</span>
-            {drama.views}
           </span>
         </div>
 

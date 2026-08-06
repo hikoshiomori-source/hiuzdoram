@@ -57,7 +57,7 @@ CREATE TABLE public.dramas (
   status TEXT DEFAULT 'Draft',
   poster_url TEXT,
   backdrop_url TEXT,
-  views TEXT DEFAULT '0', -- Keeping as text for "2.4M" format for now, or integer. Let's stick to TEXT to match mock data.
+
   rating NUMERIC(3,1) DEFAULT 0.0,
   created_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()) NOT NULL
 );

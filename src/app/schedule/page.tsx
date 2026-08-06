@@ -3,8 +3,24 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { createClient } from "@supabase/supabase-js";
+import type { Metadata } from "next";
 
-export const revalidate = 60; // 60 soniyada bir marta yangilanadi (ISR)
+export const metadata: Metadata = {
+  title: "Efir Jadvali — Haftalik yangi dorama epizodlari | hiuzdoram",
+  description:
+    "Haftalik dorama efir jadvali. Qaysi kuni qaysi serial yangi qism chiqishini bilib oling — hiuzdoram platformasida.",
+  alternates: {
+    canonical: "https://hiuzdoram.site/schedule",
+  },
+  openGraph: {
+    title: "Efir Jadvali — hiuzdoram",
+    description: "Haftalik yangi epizodlar jadvali.",
+    type: "website",
+    siteName: "hiuzdoram",
+  },
+};
+
+export const revalidate = 60;
 
 const weekDays = [
   { day: "Dushanba", short: "Du" },

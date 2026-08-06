@@ -13,7 +13,6 @@ export interface Drama {
   status: "Ongoing" | "Completed" | "Upcoming";
   synopsis: string;
   cast?: CastMember[];
-  views: string;
 }
 
 export interface Episode {
