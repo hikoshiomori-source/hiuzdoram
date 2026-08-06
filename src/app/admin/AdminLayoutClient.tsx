@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { logoutAdmin } from "../become-admin/actions";
+import { useState } from "react";
 
 const adminLinks = [
   { href: "/admin", label: "Dashboard", icon: "dashboard" },
@@ -11,6 +13,12 @@ const adminLinks = [
 
 export default function AdminLayoutClient({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
+  const [isLoggingOut, setIsLoggingOut] = useState(false);
+
+  const handleLogout = async () => {
+    setIsLoggingOut(true);
+    await logoutAdmin();
+  };
 
   return (
     <div className="flex min-h-screen bg-[#09090b]">
@@ -53,7 +61,7 @@ export default function AdminLayoutClient({ children }: { children: React.ReactN
         </nav>
 
         {/* Footer */}
-        <div className="p-4 border-t border-[#27272a]">
+        <div className="p-4 border-t border-[#27272a] flex flex-col gap-2">
           <Link
             href="/"
             className="flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-semibold text-[#a1a1aa] hover:text-white hover:bg-[#27272a] transition-all"
@@ -61,6 +69,14 @@ export default function AdminLayoutClient({ children }: { children: React.ReactN
             <span className="material-symbols-outlined text-xl">arrow_back</span>
             Saytga qaytish
           </Link>
+          <button
+            onClick={handleLogout}
+            disabled={isLoggingOut}
+            className="flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-semibold text-[#a1a1aa] hover:text-[#e11d48] hover:bg-[#e11d48]/10 transition-all text-left w-full disabled:opacity-50"
+          >
+            <span className="material-symbols-outlined text-xl">logout</span>
+            {isLoggingOut ? "Chiqilmoqda..." : "Tizimdan chiqish"}
+          </button>
         </div>
       </aside>
 
@@ -91,6 +107,13 @@ export default function AdminLayoutClient({ children }: { children: React.ReactN
                 </Link>
               );
             })}
+            <button
+              onClick={handleLogout}
+              disabled={isLoggingOut}
+              className="p-2 rounded-lg text-[#a1a1aa] hover:text-[#e11d48] transition-colors ml-2"
+            >
+              <span className="material-symbols-outlined text-xl">logout</span>
+            </button>
           </nav>
 
           {/* Search */}
@@ -108,7 +131,7 @@ export default function AdminLayoutClient({ children }: { children: React.ReactN
           </div>
 
           {/* Admin User */}
-          <div className="flex items-center gap-3">
+          <div className="hidden md:flex items-center gap-3">
             <button className="relative p-2 rounded-full hover:bg-[#27272a] transition-colors text-[#a1a1aa]">
               <span className="material-symbols-outlined text-xl">notifications</span>
               <span className="absolute top-1 right-1 w-2 h-2 bg-[#e11d48] rounded-full" />
