@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import MoverPlayer from "@/components/MoverPlayer";
 import { comments, IMAGES } from "@/lib/data"; // we'll keep comments mock for now since it's not strictly requested
 import { createClient } from "@supabase/supabase-js";
-export const revalidate = 60; // ISR cache
+export const dynamic = 'force-dynamic'; // Qo'shimcha parametrlar (?ep=) ishlashi uchun
 
 interface PageProps {
   params: Promise<{ id: string }>;
