@@ -95,6 +95,7 @@ export default async function WatchPage({ params, searchParams }: PageProps) {
             <div className="w-full bg-surface-base rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl border border-border-glass">
               {/* MoverPlayer takes the embed URL from the DB */}
               <MoverPlayer 
+                key={currentEpisode.id}
                 embedUrl={currentEpisode.moverEmbedUrl} 
                 title={`${drama.title} - ${currentEpisode.number}-qism`} 
               />
