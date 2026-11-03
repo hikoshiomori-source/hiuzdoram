@@ -44,7 +44,9 @@ class Employee:
     def role(self):
         return self.role_history[-1][0]
 
-    def change_role(self, new_role, since):
+    def change_role(self, new_role, since=None):
+        if since is None:
+            since = date.today()                # promoted today
         self.role_history.append((new_role, since))
 
     def role_on(self, day):
@@ -82,6 +84,13 @@ def test_promotion_keeps_the_same_object_and_id():
     assert ali.emp_id == 7
     assert staff[0] is ali
     assert timesheet_owner is ali           # the old reference still works
+    assert ali.monthly_pay() == 17_000_000
+
+
+def test_change_role_works_with_only_the_new_role():
+    ali = Employee(7, "Ali", LecturerRole(hours=100), date(2024, 9, 1))
+    ali.change_role(HeadRole(salary=14_000_000))        # 5.3, no date needed
+    assert ali.role_history[-1][1] == date.today()
     assert ali.monthly_pay() == 17_000_000
 
 

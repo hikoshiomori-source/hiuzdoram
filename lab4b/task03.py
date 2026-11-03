@@ -65,12 +65,12 @@ def test_family_object_is_built_without_an_error():
     assert family.months == 1
 
 
-def test_changing_vat_changes_every_kind():
-    class Subscription15(Subscription):
-        VAT_PERCENT = 15
-
-    class Student15(StudentSubscription):
-        VAT_PERCENT = 15
-
-    assert Subscription15("ali", 3).price() == 172_500
-    assert Student15("ali", 3).price() == 86_250
+def test_changing_vat_in_one_line_changes_every_kind():
+    Subscription.VAT_PERCENT = 15               # 3.4: the one line
+    try:
+        family = FamilySubscription("ali", 3, ["ali", "dilnoza", "umid", "zarina"])
+        assert Subscription("ali", 3).price() == 172_500
+        assert StudentSubscription("ali", 3).price() == 86_250
+        assert family.price() == 379_500
+    finally:
+        Subscription.VAT_PERCENT = 12           # put it back for the other tests

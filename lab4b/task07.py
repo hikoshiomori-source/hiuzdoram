@@ -115,7 +115,29 @@ def test_comparing_different_currencies_is_an_error():
 
 def test_money_is_not_equal_to_a_plain_number():
     assert (Money(500, "UZS") == 500) is False
+    assert (Money(5, "UZS") == 5) is False
     assert Money(500, "UZS") != 500
+
+
+def test_what_order_true_would_have_done():
+    """7.1: I really tried it, this is why I wrote __lt__ by hand."""
+    from dataclasses import dataclass as plain_dataclass
+
+    @plain_dataclass(frozen=True, order=True)
+    class BadMoney:
+        amount: int
+        currency: str
+
+    # it compares amount first, so it says 100 cents beat 1 tiyin
+    assert BadMoney(100, "USD") > BadMoney(1, "UZS")
+
+    # my Money refuses to answer that question at all
+    try:
+        Money(100, "USD") > Money(1, "UZS")
+    except CurrencyMismatchError:
+        pass
+    else:
+        raise AssertionError("different currencies must not be comparable")
 
 
 def test_money_can_be_a_dictionary_key():
