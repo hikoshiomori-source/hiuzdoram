@@ -49,14 +49,17 @@ class Money:
         self._same_currency(other)
         return Money(self.amount + other.amount, self.currency)
 
-    __radd__ = __add__
+    def __radd__(self, other):
+        # sum() asks here, because int does not know how to add Money
+        return self.__add__(other)
 
     def __mul__(self, times):
         if not isinstance(times, int):
             return NotImplemented
         return Money(self.amount * times, self.currency)
 
-    __rmul__ = __mul__
+    def __rmul__(self, times):
+        return self.__mul__(times)
 
     def __lt__(self, other):
         if not isinstance(other, Money):
@@ -121,9 +124,7 @@ def test_money_is_not_equal_to_a_plain_number():
 
 def test_what_order_true_would_have_done():
     """7.1: I really tried it, this is why I wrote __lt__ by hand."""
-    from dataclasses import dataclass as plain_dataclass
-
-    @plain_dataclass(frozen=True, order=True)
+    @dataclass(frozen=True, order=True)
     class BadMoney:
         amount: int
         currency: str

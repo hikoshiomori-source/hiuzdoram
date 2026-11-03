@@ -68,9 +68,10 @@ def test_family_object_is_built_without_an_error():
 def test_changing_vat_in_one_line_changes_every_kind():
     Subscription.VAT_PERCENT = 15               # 3.4: the one line
     try:
-        family = FamilySubscription("ali", 3, ["ali", "dilnoza", "umid", "zarina"])
+        members = ["ali", "dilnoza", "umid", "zarina"]
+        family = FamilySubscription("ali", 3, members)
         assert Subscription("ali", 3).price() == 172_500
         assert StudentSubscription("ali", 3).price() == 86_250
         assert family.price() == 379_500
     finally:
-        Subscription.VAT_PERCENT = 12           # put it back for the other tests
+        Subscription.VAT_PERCENT = 12       # put it back for the other tests

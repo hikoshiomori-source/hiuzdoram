@@ -71,7 +71,8 @@ class FixedOffAbove(DiscountRule):
 class FreeDeliveryAbove(DiscountRule):
     """E3.1: this one does not really fit apply(total)."""
 
-    def __init__(self, minimum, delivery_price, name, valid_from=None, valid_to=None):
+    def __init__(self, minimum, delivery_price, name,
+                 valid_from=None, valid_to=None):
         super().__init__(name, valid_from, valid_to)
         self.minimum = minimum
         self.delivery_price = delivery_price
@@ -112,9 +113,12 @@ class Cart:
     def total(self):
         total = self.goods_total
         for rule in self.rules:
-            discount = rule.apply(total) if hasattr(rule, "apply") else rule(total)
+            if callable(rule):
+                discount = rule(total)          # plain function style
+            else:
+                discount = rule.apply(total)    # class style
             total -= discount
-        return max(total, 0)                # E3.2: one place, here
+        return max(total, 0)                    # E3.2: one place, here
 
 
 # ---------- tests ----------
@@ -142,7 +146,10 @@ def test_small_order_gets_only_the_percent():
 
 
 def test_the_total_never_goes_below_zero():
-    huge = [PercentOff(100, "everything free"), FixedOffAbove(50_000, 0, "and more")]
+    huge = [
+        PercentOff(100, "everything free"),
+        FixedOffAbove(50_000, 0, "and more"),
+    ]
     assert Cart(100_000, huge).total() == 0
 
 

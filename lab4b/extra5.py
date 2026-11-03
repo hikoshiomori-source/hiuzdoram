@@ -156,7 +156,9 @@ def test_old_code_reads_an_old_message():
 def test_an_unknown_type_does_not_stop_the_consumer():
     queue = [
         V1_PAYLOAD,
-        json.dumps({"type": "order_refunded", "version": 1, "order_id": "A-3"}),
+        json.dumps(
+            {"type": "order_refunded", "version": 1, "order_id": "A-3"}
+        ),
         V2_PAYLOAD,
     ]
     decoded = [decode(payload) for payload in queue]

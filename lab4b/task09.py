@@ -122,7 +122,8 @@ def test_an_invalid_invoice_stops_before_the_insert(capsys):
 
 
 def test_wrong_order_skips_the_validation(capsys):
-    WronglyOrderedInvoice().save()          # no error, even though is_valid is False
+    # no error, even though is_valid() returns False
+    WronglyOrderedInvoice().save()
     printed = capsys.readouterr().out.splitlines()
     assert printed == [
         "TimestampMixin: set updated_at",
