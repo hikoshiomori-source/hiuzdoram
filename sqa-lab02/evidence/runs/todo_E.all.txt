@@ -1,0 +1,16 @@
+
+APP_URL = file:///home/user/hiuzdoram/sqa-lab02/builds/todo_E.html
+
+  GREEN T1 addsTodoAndClearsInput (REQ-01)
+  GREEN T2 trimsLeadingWhitespace (REQ-02)
+  GREEN T3 rejectsEmptyTitle (REQ-03)
+  GREEN T4 completingUpdatesRowAndCounter (REQ-04)
+  GREEN T5 deleteRemovesTodo (REQ-05)
+  RED   T6 activeFilterShowsOnlyActiveItems (REQ-06)
+        only the active item: expected ["Still to do"], got ["Already done"]
+  GREEN G1 trimsTrailingWhitespace (REQ-02)
+  GREEN G2 deleteRemovesOnlyTheClickedTodo (REQ-05)
+  GREEN G3 duplicateTitlesAreBothAdded (REQ-01)
+
+8/9 green, red: T6
+

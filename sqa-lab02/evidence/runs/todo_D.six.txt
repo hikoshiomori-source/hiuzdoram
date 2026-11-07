@@ -1,0 +1,13 @@
+
+APP_URL = file:///home/user/hiuzdoram/sqa-lab02/builds/todo_D.html
+
+  GREEN T1 addsTodoAndClearsInput (REQ-01)
+  GREEN T2 trimsLeadingWhitespace (REQ-02)
+  GREEN T3 rejectsEmptyTitle (REQ-03)
+  RED   T4 completingUpdatesRowAndCounter (REQ-04)
+        counter counts active only: expected "1 item left", got "2 items left"
+  GREEN T5 deleteRemovesTodo (REQ-05)
+  GREEN T6 activeFilterShowsOnlyActiveItems (REQ-06)
+
+5/6 green, red: T4
+

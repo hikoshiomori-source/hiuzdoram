@@ -1,0 +1,16 @@
+
+APP_URL = file:///home/user/hiuzdoram/sqa-lab02/builds/todo_C.html
+
+  GREEN T1 addsTodoAndClearsInput (REQ-01)
+  GREEN T2 trimsLeadingWhitespace (REQ-02)
+  GREEN T3 rejectsEmptyTitle (REQ-03)
+  GREEN T4 completingUpdatesRowAndCounter (REQ-04)
+  GREEN T5 deleteRemovesTodo (REQ-05)
+  GREEN T6 activeFilterShowsOnlyActiveItems (REQ-06)
+  GREEN G1 trimsTrailingWhitespace (REQ-02)
+  RED   G2 deleteRemovesOnlyTheClickedTodo (REQ-05)
+        the clicked row is the one gone: expected ["First","Third"], got ["Second","Third"]
+  GREEN G3 duplicateTitlesAreBothAdded (REQ-01)
+
+8/9 green, red: G2
+

@@ -1,0 +1,102 @@
+{
+  "table": {
+    "clean": {
+      "T1": "green",
+      "T2": "green",
+      "T3": "green",
+      "T4": "green",
+      "T5": "green",
+      "T6": "green",
+      "G1": "green",
+      "G2": "green",
+      "G3": "green"
+    },
+    "A": {
+      "T1": "green",
+      "T2": "green",
+      "T3": "green",
+      "T4": "green",
+      "T5": "green",
+      "T6": "green",
+      "G1": "RED",
+      "G2": "green",
+      "G3": "green"
+    },
+    "B": {
+      "T1": "green",
+      "T2": "green",
+      "T3": "RED",
+      "T4": "green",
+      "T5": "green",
+      "T6": "green",
+      "G1": "green",
+      "G2": "green",
+      "G3": "green"
+    },
+    "C": {
+      "T1": "green",
+      "T2": "green",
+      "T3": "green",
+      "T4": "green",
+      "T5": "green",
+      "T6": "green",
+      "G1": "green",
+      "G2": "RED",
+      "G3": "green"
+    },
+    "D": {
+      "T1": "green",
+      "T2": "green",
+      "T3": "green",
+      "T4": "RED",
+      "T5": "green",
+      "T6": "green",
+      "G1": "green",
+      "G2": "green",
+      "G3": "green"
+    },
+    "E": {
+      "T1": "green",
+      "T2": "green",
+      "T3": "green",
+      "T4": "green",
+      "T5": "green",
+      "T6": "RED",
+      "G1": "green",
+      "G2": "green",
+      "G3": "green"
+    },
+    "F": {
+      "T1": "green",
+      "T2": "green",
+      "T3": "green",
+      "T4": "green",
+      "T5": "green",
+      "T6": "green",
+      "G1": "green",
+      "G2": "green",
+      "G3": "RED"
+    }
+  },
+  "errors": {
+    "clean": {},
+    "A": {
+      "G1": "trailing spaces stripped: expected [\"Buy milk\"], got [\"Buy milk   \"]"
+    },
+    "B": {
+      "T3": "empty title not added: expected 0, got 1"
+    },
+    "C": {
+      "G2": "the clicked row is the one gone: expected [\"First\",\"Third\"], got [\"Second\",\"Third\"]"
+    },
+    "D": {
+      "T4": "counter counts active only: expected \"1 item left\", got \"2 items left\""
+    },
+    "E": {
+      "T6": "only the active item: expected [\"Still to do\"], got [\"Already done\"]"
+    },
+    "F": {
+      "G3": "both items added: expected 2, got 1"
+    }
+  }
+}
